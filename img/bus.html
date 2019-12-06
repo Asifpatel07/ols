@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>booking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 40%;
+}
+.w3-sidebar {
+  z-index: 3;
+  width: 212px;
+  top: 85px;
+  bottom: 0;
+  height: inherit;
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <a  class="w3-bar-item w3-bar   w3-hide-small"></a>
+  <div class="w3-bar w3-white w3-padding-16 w3-border w3-top  w3-left-align w3-xlarge">
+    <a class="w3-bar-item w3-button w3-left w3-hide-large w3-padding-16   w3-xlarge " href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+	
+   <a  class="w3-bar-item w3-bar w3-blue-light-blue  ">Logo</a>
+	 <a  class="w3-bar-item w3-bar   w3-hide-small"></a>
+	  <a class="w3-bar-item w3-bar    w3-hide-small"></a>
+	   <a  class="w3-bar-item w3-bar  w3-hide-small"></a>
+	   <a  class="w3-bar-item w3-bar    w3-hide-small"></a>
+	 <a  class="w3-bar-item w3-bar    w3-hide-small"></a>
+    <a href="booking.html" class="w3-bar-item w3-button fa fa-bed w3-round-xlarge w3-padding  w3-light-gray    "> Hotels</a>
+	<a  class="w3-bar-item w3-bar    w3-hide-small"></a>
+	 <a href="bus.html" class="w3-bar-item w3-button fa fa-bus w3-round-xlarge w3-padding  w3-gray    "> Bus</a>
+   
+   
+    <a href="#" class="w3-bar-item w3-button fa fa-user w3-round-xlarge w3-padding  w3-light-gray  w3-right  "> SignIn</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-border  w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div >
+  <b><a class="w3-bar-item w3-padding-16 w3-center"><b><h3> Profile </b><img  src="profile.jpg" alt="Avatar" class="avatar w3-right"></h3> </a></b>
+  
+
+  <a class="w3-bar-item w3-button  w3-padding-16 w3-text-blue-gray w3-white w3-center  " href="#"><i class="fa fa-home fa-fw w3-margin-right"></i><b> Home</b></a>
+  <a class="w3-bar-item w3-button  w3-padding-16 w3-text-blue-gray w3-hover-white w3-center " href="#"><i class="fa fa-gift fa-fw w3-margin-right"></i> <b> Offers</b></a>
+  <a class="w3-bar-item w3-button w3-padding-16 w3-text-blue-gray  w3-white w3-center " href="#"><i class="	fa fa-money fa-fw w3-margin-right"></i><b>  Wallet</b></a>
+  <a class="w3-bar-item w3-button w3-padding-16 w3-text-blue-gray w3-hover-white w3-center " href="#"><i class="fa fa-file-o fa-fw w3-margin-right"></i><b>Package</b></a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main w3-border w3-padding-16" style="margin-left:250px">
+
+  <div class="w3-col m9">
+		<br>
+		<br>
+		<br>
+      <div class="w3-row-padding">
+	  <br>
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding-16">
+              <h6 class="w3-opacity"></h6>
+			  		<div class="w3-row-padding">
+					  <div class="w3-third">
+					  <a class="w3-text-blue-gray fa fa-map-marker"> Location</a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="text" placeholder="location">
+					  </div>
+					
+					  <div class="w3-third">
+					  <a class="w3-text-blue-gray fa-fw">From</a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="date" placeholder="bg">
+					  </div>
+					  <div class="w3-third">
+					    <a class="w3-text-blue-gray fa-fw">To</a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="date" placeholder="Two">
+					  </div>
+					  
+					</div>
+					<br>
+				
+              <button type="button" class="w3-button w3-right w3-light-gray w3-round-xlarge"><i class="fa fa-search"></i> &nbsp;Search</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <div class="w3-light-gray w3-text-blue-gray w3-center w3-round-xlarge "><h1><b>Deals for You<b></h1></div>
+        
+		
+		<div class="w3-row-padding">
+		
+		<div class="w3-third">
+	 
+       
+		
+       
+	 
+       <div class="w3-text-blue-gray"> <p>Rooms At :- 599/-</p>
+	   <p> Non AC semi-Sleeper</p></div>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            
+              <img src="sleep5.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom w3-round-xlarge ">
+          
+        </div>
+
+      </div>
+	  <div class="w3-third">
+		
+       
+          <div class="w3-text-blue-gray"> <p>Rooms At :- 699/-</p>
+	   <p> Non  AC-Sleeper</p></div>
+           <div class="w3-row-padding" style="margin:10px 0">
+            
+              <img src="sleep6.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom w3-round-xlarge ">
+            
+        </div>
+
+      </div>
+	  <div class="w3-third">
+		
+     <div class="w3-text-blue-gray"> <p>Rooms At :- 799/-</p>
+	   <p> AC-Sleeper</p></div>
+          <div class="w3-row-padding" style="margin: 0 -16px">
+            
+              <img src="sleep1.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom w3-round-xlarge ">
+            
+        </div>
+
+      </div>
+	  </div>
+	  
+
+	  </div>
+    
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+	<br>
+	<br>
+	<br>
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="goa1.jpg" alt="Forest" style="width:100%;">
+          <p><strong>Package trip</strong></p>
+          <p></p>
+          <p><button class="w3-button w3-round-xlarge w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+         <div class="w3-red w3-panel w3-round-xlarge">Local Ads for tht location</div>
+          <img src="drink.jpg" alt="Avatar" style="width:100%"><br>
+          
+          <div class="w3-row w3-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+	   <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+         <div class="w3-green w3-panel w3-round-xlarge"> Local Ads for tht location</div>
+          <img src="room1.jpg" alt="Avatar" style="width:100%"><br>
+          
+         <br>
+        </div>
+      </div>
+      <br>
+      
+     
+      
+     
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

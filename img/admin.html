@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("plain2.jpg")}
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 50px; /* Should be removed. Only for demonstration */
+}
+</style>
+<body>
+<%@page import="java.sql.DriverManager"%>
+	<%@page import="java.sql.ResultSet"%>
+	<%@page import="java.sql.Statement"%>
+	<%@page import="java.sql.Connection"%>
+	<%
+		String id = request.getParameter("id");
+		String driver = "com.mysql.jdbc.Driver";
+		String connectionUrl = "jdbc:mysql://localhost:3306/";
+		String database = "ksrtc";
+		String userid = "root";
+		String password = "";
+		try {
+				Class.forName(driver);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				}
+			Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+	%>
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-top w3-text-white w3-center">
+	<h1 class="w3-jumbo"><b>Route Admin</b></h1>   
+   
+   
+  </div>
+ <div style="margin-left:100px" class="w3-col m10 ">
+		
+      <div class="w3-row-padding">
+	  <br>
+        <div class="w3-col m12 ">
+          <div class="w3-card w3-round w3-white w3-round-xlarge">
+            <div class="w3-container w3-padding-16">
+              <h6 class="w3-opacity"></h6>
+			  		<div class="w3-row-padding">
+					<div class="column">
+					 
+						<select class="w3-input w3-text-gray w3-border w3-round-xlarge" type="text" name="from">
+						<option value="" disabled selected>From</option>
+						<%
+					    try{
+							connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+							statement=connection.createStatement();
+							String sql="SELECT userid FROM signup  where position like 'conductor%' and assignstatus='NotAssigned'";
+							//String sql ="select * from signup where position like 'conductor%'";
+							//String sql1="SELECT s.userid FROM signup s join issue i on s.userid=i.userid join where i.completed='Completed' and s.position like 'conductor%'";
+							resultSet = statement.executeQuery(sql);
+							while(resultSet.next()){												
+	                 %> 
+						
+							<option value='<%=resultSet.getString("userid") %>'><%=resultSet.getString("userid") %> </option>
+							
+                    <%
+							}
+							connection.close();
+							} catch (Exception e) {
+							e.printStackTrace();
+							}
+			
+					%>
+				
+				
+				</select>
+						
+					  </div>
+					
+					  <div class="column">
+				
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="text" placeholder="To">
+					  </div>
+					
+					<div class="column">
+					 
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="text" placeholder="TraVels">
+					  </div>
+					  </div>
+					  <br>
+					  	<div class="w3-row-padding">
+					  <div class="w3-third">
+					   <a class="w3-text-blue-gray fa-fw"><b>Departure</b></a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="time" placeholder="csc">
+					  </div >
+					   <div class="w3-third">
+					   <a class="w3-text-blue-gray fa-fw"><b>Arrival</b></a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="time" placeholder="csc">
+					  </div >
+					  	<div class="w3-third">
+					   <a class="w3-text-blue-gray fa-fw"><b>Bus Type</b></a>
+						<input class="w3-input w3-text-gray w3-border w3-round-xlarge" type="text" placeholder="Bus Type">
+					  </div >
+					  
+					</div>
+					<br>
+					
+              <button type="button" class="w3-button w3-right w3-light-gray w3-round-xlarge"><i class="fa fa-search"></i> &nbsp;<b>Submit</b></button> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+      </div>
+
+	 
+
+
+    
+    
+</header>
+
+
+
+
+</body>
+</html>

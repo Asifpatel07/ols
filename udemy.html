@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>demo</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="java/udume.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Oswald:500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+.content {
+    padding-top: 30px;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border: medium none;
+    color: #666;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px;
+    position: relative;
+}
+.testimonials blockquote::before {
+    width: 0; 
+    height: 0;
+	right: 0;
+	bottom: 0;
+	content: " "; 
+	display: block; 
+	position: absolute;
+    border-bottom: 20px solid #fff;    
+	border-right: 0 solid transparent;
+	border-left: 15px solid transparent;
+	border-left-style: inset; /*FF fixes*/
+	border-bottom-style: inset; /*FF fixes*/
+}
+.testimonials blockquote::after {
+    width: 0;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: #e63f0c transparent transparent transparent;
+}
+.testimonials .carousel-info img {
+    border: 1px solid #f5f5f5;
+    border-radius: 150px !important;
+    height: 75px;
+    padding: 3px;
+    width: 75px;
+}
+.testimonials .carousel-info {
+    overflow: hidden;
+}
+.testimonials .carousel-info img {
+    margin-right: 15px;
+}
+.testimonials .carousel-info span {
+    display: block;
+}
+.testimonials span.testimonials-name {
+    color: #e6400c;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 23px 0 7px;
+}
+.testimonials span.testimonials-post {
+    color: #656565;
+    font-size: 12px;
+}
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+body {
+	color: #5a5a5a;
+	font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Montserrat', sans-serif;
+}
+.parallax-section {
+	background-attachment: fixed!important;
+}
+.btn-capsul {
+	border-radius: 30px;
+}
+.btn-aqua {
+	background: #0297FF;
+	color: #fff;
+}
+.btn-aqua:hover {
+	background: #10629b;
+	color: #fff;
+}
+.btn-dark-blue {
+	background: #0C242E;
+	color: #fff;
+}
+.btn-dark-blue:hover {
+	background: #063d28;
+	color: #fff;
+}
+.btn-transparent-white {
+	border: 2px solid #fff;
+	color: #fff;
+}
+.btn-transparent-white:hover, .btn-transparent-white:focus {
+	background: #fff;
+	color: #0297FF
+}
+.relative-box {
+	position: relative
+}
+section {
+	float: left;
+	width: 100%;
+	padding: 80px 0;
+}
+
+
+/* TOP HEADER
+-------------------------------------------------- */
+
+
+.navbar.top-bar {
+	border-radius: 0;
+	padding: 16px 0;
+	z-index: 16;
+}
+.navbar-toggler {
+	border: 1px solid #fff;
+	color: #fff;
+	position: absolute;
+	right: 21px;
+}
+.sps {
+	padding: 1em .5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 0.25s ease;
+	width: 100%;
+}
+.sps--abv {
+	background-color: transparent;
+	color: #000;
+}
+.sps--blw {
+	background-color: #fff;
+	color: #fff;
+}
+.top-bar a.navbar-brand {
+	color: #fff;
+	font-size: 26px;
+	font-weight: 800;
+	padding: 5px 0 0 10px;
+	text-transform: uppercase;
+}
+.sps--blw.top-bar a.navbar-brand {
+	color: #000;
+}
+.top-bar a.navbar-brand span {
+	color: #0297ff;
+}
+.top-bar .nav-link {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 12px 18px!important;
+}
+.sps--blw.top-bar .nav-link {
+	color: #000
+}
+.top-bar .navbar-nav .nav-item {
+	margin: 0
+}
+.top-bar .nav-link:hover, .top-bar .nav-item.active a {
+	color: #fff;
+	border-bottom: 2px solid #fff;
+	border-radius: 0;
+}
+.sps--blw.top-bar .nav-link:hover, .sps--blw.top-bar .nav-item.active a {
+	color: #0297ff;
+	border-bottom: none;
+	border-radius: 0;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/*Swiper*/
+.swiper-container {
+	width: 100%;
+	height: 100vh;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.main-slider .slider-bg-position {
+	background-size: cover!important;
+	background-position: center center!important;
+}
+.main-slider .swiper-button-prev, .main-slider .swiper-button-next {
+	background-image: none!important;
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #fff;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}
+.main-slider h2 {
+	color: #fff;
+	font-size: 54px;
+	line-height: 59px;
+	padding: 0 19%;
+	text-transform: uppercase;
+}
+.main-slider .swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	background: rgba(255,255,255,0.9)
+}
+.main-slider .swiper-pagination-bullet-active {
+	background: #0297ff
+}
+/* SERVICE SECTION
+-------------------------------------------------- */
+
+.service-sec .heading {
+	float: left;
+	width: 100%;
+	margin-bottom: 70px;
+	text-align:center;
+}
+.service-sec h2 {
+	display: block;
+	text-transform: capitalize;
+	font-weight: 600;
+	color: #0297FF;
+	font-size: 32px;
+}
+.service-sec h2 small {
+	color: #222;
+	display: block;
+	font-size: 22px;
+	margin-bottom: 18px;
+}
+.service-sec i {
+	border: 1px solid #0297FF;
+	border-radius: 2px;
+	font-size: 25px;
+	padding: 12px 0;
+	width: 52px;
+	color: #0297FF;
+	margin-bottom: 20px
+}
+.service-sec h3 {
+	font-size: 23px;
+	font-weight: 600;
+}
+.service-sec p {
+	line-height: 22px;
+	margin-top: 13px;
+	padding: 0 21px;
+}
+.service-sec .service-block {
+	margin-top: 30px;
+}
+.panel {
+
+    transition: padding 0.5s;
+    -moz-transition: padding 0.5s; /* Firefox 4 */
+    -webkit-transition: padding 0.5s; /* Safari and Chrome */
+    -o-transition: padding 0.5s; /* Opera */
+    -ms-transition:padding 0.5s; /* IE9 (maybe) */     
+  
+}
+
+.panel:hover {
+	padding:10px;
+}
+
+/* ABOUT SECTION
+-------------------------------------------------- */
+.about-sec {
+	background: url('http://grafreez.com/wp-content/temp_demos/burnout/img/para-01.jpg') no-repeat center center;
+	background-size: cover;
+	color: #fff;
+	position: relative;
+}
+.about-sec:before {
+	content: ' ';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(22,122,192,0.8);
+	top: 0;
+	left: 0
+}
+.about-sec h2 {
+	font-size: 55px;
+	font-weight: 800;
+	margin-top: 25%;
+}
+.about-sec h2 small {
+	display: block;
+	font-size: 24px;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+.about-sec p {
+	font-size: 16px;
+}
+
+
+.action-sec{width:100%; float:left; background:#222}
+.action-box{float:left; width:100%; text-align:center;}
+.action-box h2{color:#fff; font-size:20px;}
+/**
+ * Swiper 3.4.0
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * 
+ * http://www.idangero.us/swiper/
+ * 
+ * Copyright 2016, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Licensed under MIT
+ * 
+ * Released on: October 16, 2016
+ */
+
+</style>
+
+
+<body >
+	
+<nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+        <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mx-auto w3-text-blue" href="home.html">Logo</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse1">
+        <ul class="navbar-nav ml-auto">
+         <li class="nav-item" > <a class="nav-link" href="udemy2.html"><b  style="color: brown;">CourseCollection</b></a> </li>
+       <li class="dropdown  nav-item ">
+          <a href="#" class="dropdown-toggle  w3-large nav-link" data-toggle="dropdown" role="button"><b  style="color: brown;">Plans</b></a>
+          <ul class="dropdown-menu w3-center" role="menu" style="width: 50px">
+          
+            <li  id="menu-item-102" class="nav-enterprise menu-item menu-item-type-post_type menu-item-object-page  current-menu-item page_item page-item-98 current_page_item menu-item-102"><a href="enterprise.html"><b>Enterprise</b></a></li>
+			 <li class="w3-padding-8" href="team.html"><b>Team</b> </li> 
+			 <li class="w3-padding-8"href="nonprofit.html"><b>NON Profit</b></li>
+           
+           
+          </ul> 
+        </li>
+        <li class="nav-item"> <a class="nav-link" href="udemy3.html"><b  style="color: brown;">Pricing</b></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="resource.html"><b  style="color: brown;">Resources</b></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="udemy4.html"><b  style="color: brown;">Blog</b></a> </li>
+		<li class="nav-item"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="nav-link w3-text-red w3-round-large w3-border" href="#"><b>Login</b></a> </li>
+		<li class="nav-item"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="nav-link w3-red w3-round-large " href="#"><b>GetStarted</b></a> </li>
+		
+       
+        </ul>
+		
+      </div>
+            </div>
+    </nav>
+
+<!-- Swiper Silder
+    ================================================== --> 
+<!-- Slider main container -->
+<div class="swiper-container main-slider" id="myCarousel">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slider-bg-position" style="background:url('https://images.unsplash.com/photo-1527796261673-e9d61cc1e03c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')" data-hash="slide1">
+
+      <h2>
+<b>The destination for workplace learning</b></h2>
+<br>
+<p><br><br><button class="w3-button w3-red">Get Started</button></p>
+    </div>
+    <div class="swiper-slide slider-bg-position" style="background:url('http://grafreez.com/wp-content/temp_demos/burnout/img/3.jpg')" data-hash="slide2">
+      <h2><small>Learn and improve skills across business, tech, design, and more. Taught by experts to help your workforce do whatever comes next.</small>
+</h2><br>
+	<p><br><br><button class="w3-button w3-red">Get Started</button></p>
+    </div>
+	
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+ 
+</div>
+<div class="w3-white ">
+<section class="service-sec" id="benefits">
+   
+           
+              <h4 class="text-center text-primary">Companies of all sizes choose Udemy for Business for top-rated courses</h4>
+			     <h4 class="text-center  w3-text-black">1000+ Expert instructors, thought leaders, and best-selling authors at your Finger tip</h4>
+
+  <div class="container">
+
+
+    <div class='col-md-12'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+    
+            <div class="row">
+              <div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/addidas.png"></a>
+              </div>          
+              <div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/paypal.png"></a>
+              </div>
+              <div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/bmw.jpg"></a>
+              </div> 
+				<div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/kai.png"></a>
+              </div>
+			  <div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/gen.png"></a>
+              </div>
+			  <div class="col-md-2">
+                <a class="thumbnail" href="#"><img alt="" src="img/lyft.png"></a>
+              </div>
+             
+			 
+              
+            </div>
+          </div>
+          
+         
+        
+       
+                           
+    </div>
+  </div>
+</div>
+
+      
+      
+
+
+</section>
+</div>
+<div class="container bootstrap snippet">
+    <div class="row">
+        <h2 class="text-center text-primary">Learn From the Real World Experts on The Topics They Know Best..</h2>
+        <hr>
+    	<div class="col-md-12 col-md-offset-0">
+			<div class="row testimonials">
+				<div class="col-sm-4">
+					<blockquote>
+						<p class="clients-words">Founder of the London App Brewery, a top-rated programming bootcamp. Provides in-person mobile development training to Oracle, Salesforce, and Ford.</p>
+						<span class="clients-name text-primary">iOs Development
+</span><br>
+						<span class="clients-name text-primary">     Angela Yu</span>
+						
+						<img class="img-circle img-thumbnail"  src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/angela-yu.jpg" style="width: 150px;height:150px;">
+					</blockquote>
+				</div>
+				<div class="col-sm-4">
+					<blockquote>
+						<p class="clients-words">Head of Data Science of Pierian Data Inc. Provides in-person data science and Python programming training to General Electric, Cigna, New York Times, and Credit Suisse.</p>
+						<span class="clients-name text-primary">Data Science</span><br>
+						<span class="clients-name text-primary"> Jose Portilla</span>
+						
+						<img class="img-circle img-thumbnail" src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/jose-portilla.jpg" style="width: 150px;height:150px;">
+					</blockquote>
+				</div>
+				<div class="col-sm-4">
+					<blockquote>
+						<p  class="clients-words">Co-founder and CEO. New York Times bestselling author and creator of Radical Candor. Former leader at Google and Apple. CEO coach at Dropbox, Qualtrics, Twitter and other tech companies.</p>
+						<span class="clients-name text-primary">Author, CEO coach, founder</span><br>
+						<span class="clients-name text-primary">    Kim Scott</span>
+						<img class="img-circle img-thumbnail" src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/kim-scott.jpg" style="width: 150px;height:150px;">
+					</blockquote>
+				</div>
+			</div><!--/.row-->
+		</div><!--/.col-->	
+	</div><!--/.row-->
+</div>
+<div class=" w3-padding-16">
+<div class="container content ">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="testimonials">
+            	<div class="active item">
+                  <blockquote><h3>It's tremendous. When people find things they're interested in, they'll spend 300 minutes on that topic inside the Udemy for Business platform. Udemy for Business has created the opportunity for us to learn way more about what our employees want. It's been staggering the amount of traffic we've gotten from dedicated Udemy learners.</h3></blockquote>
+                  <div class="carousel-info">
+                    <img alt="" src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/derek-hann.png" class="pull-left">
+                    <div class="pull-left">
+                      <span class="testimonials-name">Derek Hann</span>
+                      <span class="testimonials-post">Chief Learning Officer, PayPal</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<center>
+<strong><a href="#" target="_blank">Watch case study <b>> </b></a></strong>
+</center>
+</div>
+<!-- About 
+    ================================================== -->
+<section class="about-sec parallax-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class=" img-thumbnail"  src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/video-devices.png">
+      </div>
+      <div class="col-md-6 w3-center">
+        <a data-src="https://player.vimeo.com/video/266784319?autoplay=1&amp;title=0&amp;byline=0" data-toggle="modal" data-target="#vimeoModal" class="modalLaunch">
+                                <img width="100" class="img-responsive center-block mb-40" src="https://3wdle54dogod1e51oj737uw5-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/play-button.png" alt="Play Button">
+                            </a>
+      <a class=" w3-text-white w3-xxlarge ">Watch our <br>product overview</a></div>
+    </div>
+  </div>
+</section>
+
+ <section class="action-sec w3-black">
+          <div class="container">
+              <div class="action-box text-center"><h2>Experience a better learning platform </h2><a class="btn btn-danger" href="#" target="_blank">Get a Free Demo</a></div>
+          </div>
+		  <br>
+		  <br>
+		  <div class="w3-row w3-text-grey ">
+    
+<div  style="width:30%" class="w3-col  w3-xlarge  w3-center">
+  <br>
+  
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  
+
+</div>
+<div  style="width:40%" class="w3-col  w3-center  ">
+<br>
+  <p class=" w3-hover-opacity ">Contact Details</p>
+   <p class=" w3-hover-opacity "> 
++91-=======,+91-======<br>
+info@######.com<br>
+www.the#######.com</p>
+  
+
+</div>
+<div  style="width:30%" class="w3-col  w3-center">
+  <br>
+
+</a><br><br><br>
+   <a href="#" class="w3-button w3-light-grey w3-round-large">Subscribe :</a>
+  
+
+</div>
+</div>
+      </section>
+      
+      
+
+</body>
+
+
+<script>
+
+
+
+/*------- Smooth Scroll -------*/
+
+
+
+
+
+/**
+ * Swiper 3.4.0
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * 
+ * http://www.idangero.us/swiper/
+ * 
+ * Copyright 2016, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Licensed under MIT
+ * 
+ * Released on: October 16, 2016
+ */
+
+
+</script>
+
+
+

@@ -1,0 +1,4240 @@
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <%@page import="java.sql.Date"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.text.ParseException"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page import="javax.servlet.http.HttpUtils.*"%>
+<head>
+<title>Inventdial - India's top local serch engine, Booking hotel, Travel, Shopping</title>
+<meta name="title" content="Inventdial - India's top local serch engine, Booking hotel, Travel, Shopping"/> 
+<meta name="description" content="Inventdial is the best search engine in India that helps you find exactly what you're looking for"/>
+<meta name="keywords" content="local search engine, automobile,booking hotels,travel,book store,colleges, shopping,medical, event management,wedding decorations,sports accessories"/>
+<link rel="canonical" href="<%=javax.servlet.http.HttpUtils.getRequestURL(request)%>" />
+<meta name="robots" content="INDEX, FOLLOW">
+<meta name="googlebot" content="code"> 
+<link rel="stylesheet" href="css1/bootstrap.min.css"><!-- bootstrap-CSS -->
+<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+<link rel="stylesheet" href="css1/bootstrap-select.css"><!-- bootstrap-select-CSS -->
+<link href="css1/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
+<link rel="stylesheet" href="css1/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css" /><!-- fontawesome-CSS -->
+<link rel="stylesheet" href="css/responsive.css" /><!-- fontawesome-CSS -->
+<link rel="stylesheet" href="css1/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   
+<!-- meta tags -->
+<!-- curosel -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+   <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+<script src="js2/bootstrap.min.js"></script> 
+<link href="css2/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+<!-- Custom styles for this template -->
+    <link href="css2/main.css" rel="stylesheet" type="text/css">
+    <link href="css2/GridColumnCarousel.min.css" rel="stylesheet" type="text/css">
+
+<link href="css1/materialize.css" rel="stylesheet"> 
+    
+    
+      <script src="js2/GridColumnCarousel.js"></script>
+  <script type="text/javascript">
+function password(length, special) {
+  var iteration = 0;
+  var password = "";
+  var randomNumber;
+  if(special == undefined){
+      var special = false;
+  }
+  while(iteration < length){
+    /* randomNumber = (Math.floor((Math.random() * 100)) % 94) + 33; */
+    randomNumber=Math.floor(Math.random() * 100); 
+     if(!special){
+      if ((randomNumber >=49) && (randomNumber <=57)) { continue; }
+    } 
+    iteration++;
+    password += randomNumber;
+  }
+  document.getElementById('pwd').innerHTML=password;
+  document.getElementById("id").value=password;
+ 	return password;
+}
+</script> 
+  <script type="text/javascript">
+function loadXMLDoc()
+{
+var xmlhttp;
+var k=document.getElementById("phone").value;
+var urls="checkuserforgotcontact.jsp?ver="+k;
+
+if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        document.getElementById("err").innerHTML=xmlhttp.responseText;
+     }
+  }
+    xmlhttp.open("GET",urls,true); 
+   xmlhttp.send();
+}
+</script>
+<script type="text/javascript">
+          function validateForm1()
+            {  
+            var x=document.forms["login"]["phone"].value;
+           
+            var y=document.getElementById('actual').value; 
+         
+            
+                if (y=="taken")
+                {
+                       alert(" Contact Number and Password is not matched! ");
+                    return false;
+                }
+                    
+                    
+             }
+        </script>
+ <script type="text/javascript">
+function loadXMLDoc1()
+{
+var xmlhttp;
+var k=document.getElementById("pass").value;
+var m=document.getElementById("phone").value;
+var urls="checkuserpass.jsp?ver="+k+"&ver1="+m;
+
+
+if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        document.getElementById("err1").innerHTML=xmlhttp.responseText;
+       /*  document.getElementById("err").innerHTML=xmlhttp.responseText; */
+     }
+  }
+    xmlhttp.open("GET",urls,true); 
+   xmlhttp.send();
+}
+</script>
+ 
+<!-- end of login script -->
+<!--start of register script  -->
+
+   <script type="text/javascript">
+          function validateForm4()
+            {  
+            var x=document.forms["login"]["phone"].value;
+            var y=document.getElementById('actual4').value;            
+            
+                if (y=="taken")
+                {
+                       alert("Your Contact Number already Exist");
+                    return false;
+                }
+                    
+                    
+             }
+        </script>
+        <script type="text/javascript">
+function loadXMLDoc4()
+{
+var xmlhttp;
+var k=document.getElementById("phone1").value;
+var urls="checkusername.jsp?ver4="+k;
+
+if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        document.getElementById("err4").innerHTML=xmlhttp.responseText;
+     }
+  }
+    xmlhttp.open("GET",urls,true); 
+   xmlhttp.send();
+}
+</script>
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GA_TRACKING_ID');
+</script>
+	<script src="/test/application.js" type="text/javascript"></script>
+	 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+ 
+ <script type="text/javascript">
+history.pushState(null,null,'main.jsp');
+window.addEventListener('popstate',function(event){
+history.pushState(null,null,'main.jsp');
+});
+</script>
+  <!-- Product slider -->
+  <style type="text/css">
+	@media only screen and (min-width:600px){
+	.hide-on-desktop, * [aria-labelledby='hide-on-desktop']{
+	display:none;
+	max-height:0;overflow:hidden;
+	}
+	
+	}
+	</style>
+	<style>
+	.h a{
+	color:#818181;
+	}
+	.h a:hover{
+	color:deepskyblue;
+	}
+	</style>
+ 
+  <style>
+.p span{
+color:green;
+}
+.p a{
+color:deepskyblue;
+text-decoration:none;
+}
+</style>
+  <style>
+
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+<style>
+.checked {
+    color: orange;
+}
+</style>
+ <style>
+.zoom {
+    
+    transition: transform .2s; /* Animation */
+    width: 150px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+  
+  <!-- header end -->
+  <style>
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+  </style>
+  <style type="text/css">
+  div.static{
+  position:static;
+  border:3px solid black;
+  height:150px;
+  width:150px;
+  
+</style>
+<style type="text/css">
+  div.static1{
+  position:static;
+  margin-left: 94px;
+  border:3px solid black;
+  height:150px;
+  width:150px;
+  
+</style>
+ <style type="text/css">
+	.exactCenter {
+	
+		background-color: #00FF00;
+		
+		
+	}
+			</style>
+<!-- corosel end -->
+<style>
+
+.sidenav {
+        height:490px;
+    width: 110%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    
+}
+
+.sidenav a {
+    padding: -1px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: deepskyblue;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+
+<style>
+.carousel-showmanymoveone
+{
+  .carousel-control
+  { 
+    width: 4%;
+    background-image:none;
+
+    &.left 
+    {
+      margin-left:15px;
+    }
+
+    &.right 
+    {
+      margin-right:15px;
+    }
+  }
+
+  .cloneditem-1, 
+  .cloneditem-2, 
+  .cloneditem-3
+  {
+    display: none;
+  }
+
+  .carousel-inner
+  {
+    @media all and (min-width: 768px)
+    {
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(50%, 0, 0);  
+          left: 0;
+        }
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-50%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }    
+      } 
+
+      > .active.left,
+      > .prev
+      {
+        left: -50%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  50%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-1 
+      {
+        display: block;
+      }
+    }
+
+    @media all and (min-width: 992px)
+    {    
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(25%, 0, 0);  
+          left: 0;
+        }    
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-25%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }
+      }
+
+      > .active.left,
+      > .prev
+      {
+        left: -25%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  25%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-2, 
+      .cloneditem-3
+      {
+        display: block;
+      }
+    }    
+  }
+}
+
+
+// demo setup only, not needed for carousel
+.container-fluid
+{
+  margin-bottom: 50px;
+}
+
+p
+{
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  margin-bottom: 2em;
+}
+h2
+{
+  margin: 2em 0 1em;
+}
+
+.logo
+{
+  margin: 20px auto;
+  height: 100px;  
+  
+  @media only screen and (min-width : 768px) {  
+    margin: 28px;
+    float: left;
+  }
+}
+
+.title
+{
+  padding: 28px;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+<style>input, label {
+    float:left;
+    margin:5px;
+}</style>
+
+<style>
+	.menu{
+	font-size:14px;
+	background-color:white;
+	}
+	.menu .list .hovers li a:hover{
+	background-color:red;
+	}
+	</style>
+	                                        
+<!-- offer tag css -->
+                                        <style>
+                                        
+.offtag {
+  background: yellow;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.offtag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.offtag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid yellow;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.offtag:hover {
+  
+  color: black;
+}
+
+.offtag:hover::after {
+   
+}
+                                        </style>
+                                        <!-- offer tag css end -->
+</head>
+<body onload="initialize(j)">	
+ <%@page import="java.sql.DriverManager"%>
+	<%@page import="java.sql.ResultSet"%>
+	<%@page import="java.sql.Statement"%>
+	<%@page import="java.sql.Connection"%>
+	<%
+		/* String id = request.getParameter("id"); */
+	
+		String driver = "com.mysql.jdbc.Driver";
+		String connectionUrl = "jdbc:mysql://localhost:3306/";
+		String database = "localsearchengine";
+		String userid = "root";
+		String password = "root";
+		try {
+				Class.forName(driver);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				}
+			Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+	%> 
+	<%
+		if(session.getAttribute("modelid")!=null){
+			if(session.getAttribute("modelid")!=""){%>
+			
+			<script type="text/javascript">
+			
+		//document.getElementById('id01').style.display='block';
+		$(document).ready(function(){
+			
+		$("#id01").modal('show');
+		
+			//$("#id01").modal('show');
+		});
+		</script>
+		
+				
+			<%
+			session.removeAttribute("modelid");
+			}
+		}%>
+		
+		
+		<div class="w3ls-header" style="background: steelblue;    padding: 0px 0px 0px 20px;width:100%;position: fixed;z-index: 999;"><!--header-one--> 
+			<!-- <div class="w3ls-header-left">
+				<p><a href="mobileapp.html"><i class="fa fa-download" aria-hidden="true"></i>Download Mobile App </a></p>
+			</div> -->
+			<div class="w3ls-header-right">
+				<ul>
+				
+					<li class="dropdown head-dpdn" style="color:white;">
+						Business Owner? <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;cursor:pointer;"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+					</li>
+					
+					<li class="dropdown head-dpdn">
+						<a href="contactus.jsp"><span class="active uls-trigger"><i class="fa fa-map" aria-hidden="true"></i>Contact Us</span></a>
+					</li>
+					<li class="dropdown head-dpdn">
+					</li>
+					
+				</ul>
+			</div>
+			
+			<div class="clearfix"> </div> 
+		</div><br><br>
+	<header id="myHeader" style="background-color: white;z-index: 99;">
+		
+		
+		<div id="id01" class="modal" style="z-index:99;position: absolute;overflow-y: scroll;">
+  
+ 
+    
+<div class="container">
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              
+                <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="z-index: 99;margin-top: -20px;color: red;">&times;</span>
+      
+    </div>
+              <div class="modal-body">
+                <div class="well" style="margin-top: -36px;overflow-y: scroll;">
+                  <ul class="nav nav-tabs" style="color:black">
+                    <li class="active"><a href="#login" data-toggle="tab" style="color:black;">Login</a></li>
+                    <li><a href="#create" data-toggle="tab" style="color:black;">Create Account</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="login">
+                      <form class="form-horizontal" class="s12" name="login" action="UserSession.jsp" method="" onsubmit="return  validateForm1();">
+                        <fieldset>
+                              
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Contact Number</label>
+                            <div class="controls">
+                              <input type="text" id="phone" id="username" name="phone" placeholder="" class="input-xlarge" onkeyup="loadXMLDoc()" required="required" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" pattern="[6789][0-9]{9}" Maxlength="10" minlength="10">
+                        
+                            </div>
+                                
+                          </div><br>
+                          <div><span id="err"> </span></div>
+     
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password" style="font-size: 14px;">Password</label>
+                            <div class="controls">
+                              <input type="password" id="pass" id="password" name="passw" placeholder="" class="input-xlarge" onkeyup="loadXMLDoc1()" class="validate" minlength="4" maxlength="8" required="required">
+                            
+                            </div>
+                          </div><br>
+                          <div style="margin-top:83px"><span id="err1"> </span></div>
+                          <label class="control-label"  for="username"><a href="forgotpass.jsp" style="font-size: 14px;">Forgot Password?</a></label>
+     
+     
+                          <div class="control-group">
+                            <!-- Button -->
+                            <div class="contr0ols">
+                              <button class="btn btn-success">Login</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>                
+                    </div>
+                    <div class="tab-pane fade" id="create">
+                      <form id="tab" class="s12" action="InsertServlet"  method="post"  name="login" onsubmit="return validateForm4();">
+                        <label style="font-size: 14px;">Name</label>
+                        <div class="controls">
+                        <input type="text" value="" id="first_name" name="fname" placeholder="Name"  pattern="[a-zA-Z\s.a-zA-Z\s.a-zA-Z\s]+" minlength="3"  required  Maxlength="20"  class="input-xlarge"> 
+                        <!--  <input type="text" value="" id="first_name" name="fname" placeholder="Name"  pattern="[a-zA-Z._^%$#!~@,-]+"  required  Maxlength="20"  class="input-xlarge"> -->
+                        </div>
+                        <label style="font-size: 14px;">Contact Number</label>
+                        <div class="controls">
+                        <input type="text" id="phone1" value="" placeholder="Contact Number" onkeyup="loadXMLDoc4()"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');"   name="phone"  pattern="[6789][0-9]{9}" Maxlength="10" minlength="10" title="enter digits only" required class="input-xlarge">
+                        </div>
+                        <br><div style="margin-top:83px"><span id="err4"> </span></div>
+                        <label style="font-size: 14px;">Password</label>
+                        <div class="controls">
+                        <input type="password" value="" name="pass" pattern="[^' ']+" placeholder="Create Password" id="password"   minlength="4" onkeyup='check();' maxlength="8" title="4 to 8 characters" required class="input-xlarge">
+                        </div>
+                        <label style="font-size: 14px;">Confirm Password</label>
+                        <div class="controls">
+                        <input type="password" value="" name="conpass" pattern="[^' ']+" placeholder="Confirm Password" id="confirm_password" oncopy="return false" onpaste="return false" onkeyup='check();' minlength="4" maxlength="8" title="4 to 8 characters" required class="input-xlarge">
+                        </div><br>
+                        <div style="margin-top:165px"><span id='message'></span></div>
+                        <div>
+                         <button class="btn btn-primary">Create Account</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+   
+
+    
+</div>
+<!-- for popup -->
+		<div id="id03" class="modal" style="z-index:99;">
+  
+ 
+    
+<div class="container">
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              
+                <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="z-index: 99;margin-top: -20px;color: red;">&times;</span>
+      
+    </div>
+              <div class="modal-body">
+                <div class="well" style="margin-top: -36px;">
+                  <ul class="nav nav-tabs" style="color:black">
+                    <li class="active"><a href="#login" data-toggle="tab" style="color:black;">Login</a></li>
+                    <li><a href="#create" data-toggle="tab" style="color:black;">Create Account</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="login">
+                      <form class="form-horizontal" class="s12" name="login" action="UserSession.jsp" method="" onsubmit="return  validateForm1();">
+                        <fieldset>
+                              
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Contact Number</label>
+                            <div class="controls">
+                              <input type="text" id="phone" id="username" name="phone" placeholder="" class="input-xlarge" onkeyup="loadXMLDoc()" required="required" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" pattern="[6789][0-9]{9}" Maxlength="10" minlength="10">
+                        
+                            </div>
+                                
+                          </div><br>
+                          <div><span id="err"> </span></div>
+     
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password" style="font-size: 14px;">Password</label>
+                            <div class="controls">
+                              <input type="password" id="pass" id="password" name="passw" placeholder="" class="input-xlarge" onkeyup="loadXMLDoc1()" class="validate" minlength="4" maxlength="8" required="required">
+                            
+                            </div>
+                          </div><br>
+                          <div style="margin-top:83px"><span id="err1"> </span></div>
+                          <label class="control-label"  for="username"><a href="forgotpass.jsp" style="font-size: 14px;">Forgot Password?</a></label>
+     
+     
+                          <div class="control-group">
+                            <!-- Button -->
+                            <div class="contr0ols">
+                              <button class="btn btn-success">Login</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>                
+                    </div>
+                    <div class="tab-pane fade" id="create">
+                      <form id="tab" class="s12" action="InsertServlet"  method="post"  name="login" onsubmit="return validateForm4();">
+                        <label style="font-size: 14px;">Name</label>
+                        <div class="controls">
+                        <input type="text" value="" id="first_name" name="fname" placeholder="Name"  pattern="[a-zA-Z\s.a-zA-Z\s.a-zA-Z\s]+" minlength="3"  required  Maxlength="20"  class="input-xlarge"> 
+                        <!--  <input type="text" value="" id="first_name" name="fname" placeholder="Name"  pattern="[a-zA-Z._^%$#!~@,-]+"  required  Maxlength="20"  class="input-xlarge"> -->
+                        </div>
+                        <label style="font-size: 14px;">Contact Number</label>
+                        <div class="controls">
+                        <input type="text" id="phone1" value="" placeholder="Contact Number" onkeyup="loadXMLDoc4()"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');"   name="phone"  pattern="[6789][0-9]{9}" Maxlength="10" minlength="10" title="enter digits only" required class="input-xlarge">
+                        </div>
+                        <br><div style="margin-top:83px"><span id="err4"> </span></div>
+                        <label style="font-size: 14px;">Password</label>
+                        <div class="controls">
+                        <input type="password" value="" name="pass" pattern="[^' ']+" placeholder="Create Password" id="password"   minlength="4" onkeyup='check();' maxlength="8" title="4 to 8 characters" required class="input-xlarge">
+                        </div>
+                        <label style="font-size: 14px;">Confirm Password</label>
+                        <div class="controls">
+                        <input type="password" value="" name="conpass" pattern="[^' ']+" placeholder="Confirm Password" id="confirm_password" oncopy="return false" onpaste="return false" onkeyup='check();' minlength="4" maxlength="8" title="4 to 8 characters" required class="input-xlarge">
+                        </div><br>
+                        <div style="margin-top:165px"><span id='message'></span></div>
+                        <div>
+                         <button class="btn btn-primary">Create Account</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+   
+
+    
+</div>
+
+
+
+ <div id="id02" class="modal" style="overflow: auto; z-index:9;">
+  
+ 
+    
+<div class="container">
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              
+                <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" style="z-index: 99;margin-top: 10px;color: red;">&times;</span>
+      
+    </div>
+              <div class="modal-body">
+                <div class="well" >
+                  <a onclick="document.getElementById('id01').style.display='block'"style="text-decoration: none;cursor: pointer;"><h2 align="right">Want to post job? Click</h2></a>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="login">
+                      <form class="form-horizontal" action="./ApplyJob" method="POST">
+                        <fieldset>
+                              <div class="row">
+                              <div class="col-md-4">
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">First Name</label>
+                            <div class="controls">
+                              <input type="text" id="name" name="fname" placeholder="" pattern="[a-zA-Z\s.a-zA-Z\s.a-zA-Z\s]+" minlength="3"  required  Maxlength="10"  class="input-xlarge">
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-md-4">
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Middle Name</label>
+                            <div class="controls">
+                              <input type="text" id="name" name="fname" placeholder="" pattern="[a-zA-Z\s.a-zA-Z\s.a-zA-Z\s]+" minlength="3"    Maxlength="10"  class="input-xlarge">
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-md-4">
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Last Name</label>
+                            <div class="controls">
+                              <input type="text" id="name" name="fname" placeholder="" pattern="[a-zA-Z\s.a-zA-Z\s.a-zA-Z\s]+" minlength="3"    Maxlength="10"  class="input-xlarge">
+                            </div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <div class="col-md-6">
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Phone Number</label>
+                            <div class="controls">
+                              <input type="text" id="ph" name="con" placeholder="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');"     pattern="[6789][0-9]{9}" Maxlength="10" minlength="10" title="enter digits only" required class="input-xlarge">
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-md-6">
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Alternate Number</label>
+                            <div class="controls">
+                              <input type="text" id="ph" name="con" placeholder="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');"     pattern="[6789][0-9]{9}" Maxlength="10" minlength="10" title="enter digits only"  class="input-xlarge">
+                            </div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username" style="font-size: 14px;">Mail ID</label>
+                            <div class="controls">
+                              <input type="email" id="mail" name="email" placeholder="" class="input-xlarge" style="height:40px;" required/>
+                            </div>
+                          </div>
+                          
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"   style="font-size: 14px;">Job Type</label>
+                             <div class="controls">
+                             
+                             <select name="type" style="display: block;background-color: transparent;" required> 
+                               <option>Select Job Type</option>
+                              <option>Full Time</option>
+                              <option>Part Time</option>
+                              <option>Work from Home</option>
+                              <option>Internship</option> 
+                             
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label"  style="font-size: 14px;">Job Role</label>
+                            <div class="controls">
+                             <select name="position" style="display: block;background-color: transparent;" required> 
+                              <option>Select Position</option>
+                              <option>Software Enginer</option>
+                              <option>Tester</option>
+                              <option>Team Leader</option>
+                              <option>Seniour Software Engineer </option>
+                              <option>Juniour Software Engineer </option>
+                              
+                              </select>
+                              </div>
+                          </div>
+                       
+                          
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"   style="font-size: 14px;">Education</label>
+                             <div class="controls">
+                             
+                             <select name="qual" onchange="categoryChange(this);" style="display: block;background-color: transparent;" required> 
+                              <option value="empty">Select Education</option>
+                              <option value="Doctorate/Phd">Doctorate/Phd</option>
+                              <option value="Masters/Post Graduation">Masters/Post Graduation</option>
+                              <option value="Graduation/Diploma">Graduation/Diploma</option>
+                              <option value="12th/PUC">12th/PUC</option>
+                              <option value="10th/SSLC">10th/SSLC</option>
+                              <option value="Below 10th">Below 10th</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label" style="font-size: 14px;">Subject</label>
+                             <div class="controls">
+                             
+                             <select name="subqual" id="sub-category" style="display: block;background-color: transparent;" required> 
+                              <option value="0">Select Subject</option>
+                              
+                              
+                              </select>
+                            </div>
+                          </div>
+                          
+                       
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label"  style="font-size: 14px;">Experience</label>
+                            <div class="controls">
+                             <select name="minexp" style="display: block;background-color: transparent;" required> 
+                             <option>Select Experience</option>
+                               <option>0-1</option>
+                              <option>1-2</option>
+                              <option>2-3</option>
+                              <option>3-4</option>
+                              <option>4-5</option>
+                              <option>5-6</option>
+                              <option>6-7</option>
+                              <option>7-8</option>
+                               <option>8-9</option>
+                              <option>9-10</option>
+                              <option>10-11</option>
+                              <option>11-12</option>
+                              <option>12-13</option>
+                              <option>13-14</option>
+                              <option>14-15</option>
+                              <option>15-16</option>
+                               <option>16-17</option>
+                              <option>17-18</option>
+                              <option>18-19</option>
+                              <option>19-20</option>
+                              <option>20-21</option>
+                              <option>21-22</option>
+                              <option>22-23</option>
+                              <option>23-24</option>
+                              <option>24-25</option>
+                              <option>25-26</option>
+                              <option>26-27</option>
+                               <option>27-28</option>
+                              <option>28-29</option>
+                              <option>29-30</option>
+                              
+                             
+                              
+                              </select>
+                              </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label"  style="font-size: 14px;">Salary(Monthly)</label>
+                            <div class="controls">
+                             <select name="salary" style="display: block;background-color: transparent;" required> 
+                             <option>Select Salary</option>
+                              <option>1K - 5K</option>
+                              <option>5K - 10K</option>
+                              <option>10K - 20K</option>
+                              <option>20K - 50K</option>
+                              <option>50K - 1Lakh</option>
+                              <option>1Lakh - 1Crore</option>
+                             
+                              
+                              </select>
+                              </div>
+                          </div>
+                          <!-- </div>
+                          </div> -->
+     
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label"  style="font-size: 14px;">Description</label>
+                            <div class="controls">
+                              <input type="text"  name="desc" placeholder="" class="input-xlarge" Maxlength="200">
+                            </div>
+                          </div>
+                          
+     
+                          <div class="control-group">
+                            <!-- Button -->
+                            <div class="controls">
+                              <button class="btn btn-success">Submit</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>                
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+   
+
+    
+</div>
+
+
+
+		<div class="container-fluid">
+			<div class="row">
+			<a href="main.jsp">
+			<div class="col-md-3">
+			<h1 class="p" style="font-style:unset;margin-top:5px;"><span><img src="images/lo.png" alt="logo" style="height:50px;width:15%;">INVENT</span><a>DIAL</a> </h1>
+				<!-- <div class="logo" >
+					<img src="images/logo.png" style="width:100%;height:100px;">
+				</div> -->
+				</div>
+				</a>
+	<script type="text/javascript">
+		var hiddencity= "Bangalore";
+		var attn_user = "";
+	</script>
+        <div class="col-md-9">
+				<form class="tourz-search-form" style="margin-top:0px">
+					
+					<div class="row">
+					<div class="col-md-3" style="height:47px;">
+					<input type="text" id="autocomplete" name="city"   class="results[0]" placeholder="Location?" onFocus="geolocate()"  value="Bengaluru" style="background: #EDF4FF;width: 114%;text-align: center;"><!-- style="background-color:#fff;color:black;height:3.5rem;background-size:12.75pt;background-position-x:7.5pt;font-size:14px;border-radius: 50px; border-left-style: none;border-top-style: none;text-align: center;box-shadow:inset 0 0 5px #000;" -->
+						<input type="hidden"  id="lat" name="lat" value="12.9715987">
+						
+						<input type="hidden" id="lan" name="lan" value="77.59456269999998">
+						
+</div>
+<div class="col-md-5" style="margin-bottom:-1pc;">
+<input type="text" id="select-search" name="category" placeholder="Search services like hotel, resorts, Hospitals and more" autocomplete="off" class="autocomplete"  style="width:114%;" required="required" /><!-- style="background-color:#fff;color:black;height:3.5rem;border-radius: 50px;box-shadow:inset 0 0 5px #000;" required=""/ -->
+		<!-- <input type="button" value="Search" onclick="check(this.form);" class="btn btn" style="margin-top:10px;margin-left:5px;" > -->
+<button type="button" class="hidden-xs hidden-sm" onclick="check(this.form);" style="width: 16%;position:absolute;height: 44px;margin-left: -67px;margin-top: 9px;background-color: steelblue;"><a ><i class="fa fa-search" style="margin-left: -14px;font-size: 30px;margin-top: -9px;color:white;"></i></a></button>
+
+<button type="button" class="hide-on-desktop" onclick="check(this.form);" style="    width: 17%;height: 45px;margin-left: -52px;margin-top: 8px;background-color: steelblue;"><a ><i class="fa fa-search" style="margin-left: -14px;font-size: 30px;margin-top: -9px;color:white;"></i></a></button>
+<!-- width: 100%;height:3.5rem;border-radius: 50px; box-shadow:inset 0 0 5px #000;" -->
+							
+</div>
+<div class="hidden-xs hidden-sm hidden-md">
+<div class="col-md-4" style="float: right;width: 24%;">
+
+<!-- <input type="button" value="Post Job" onclick="document.getElementById('id02').style.display='block'" class="btn btn" style="margin-top:10px;margin-left:72px;background: green;" >width: 100%;height:3.5rem;border-radius: 50px; box-shadow:inset 0 0 5px #000;"
+ -->
+</div>
+</div>
+<div class="hide-on-desktop">
+<div class="col-md-4">
+
+<input type="button" value="Post Job" onclick="document.getElementById('id02').style.display='block'" class="btn btn" style="margin-top:10px;margin-left:170px;background: green;" ><!-- width: 100%;height:3.5rem;border-radius: 50px; box-shadow:inset 0 0 5px #000;" -->
+
+</div>
+</div>
+</div>
+					</form>
+					
+					
+					</div>
+					
+					
+				<!-- <a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a> -->
+				
+				
+			</div>
+		</div>
+	</header>
+	<style><style>
+
+
+
+
+
+
+
+
+</style></style>
+
+	<!-- //header -->
+	<!-- Slider -->
+	<br><br>
+	<div class="container-fluid" style="width:97%;">
+	<div class="row">
+	
+	<div class="col-md-12">
+	
+	 <div class="hidden-xs hidden-md hidden-ms">
+		<img src="images/dm.jpg" alt="Snow" style="width:100%;height: 229px;">
+  <div class="bottom-left"><img src="images/3d4.png" alt="Snow" style="top: 119px;
+    position: absolute;
+    z-index: 3;
+    /* bottom: 388px; */
+    left: 316px;
+    width: 28%;
+    height: 152px;"></div>
+  <div class="top-left"><img src="images/3d3.jpg" alt="Snow" style="z-index: 1;
+    height: 212px;
+    width: 24%;
+    position: absolute;
+    top: -15px;
+    left: 162px;"></div>
+  <div class="top-right"><img src="images/3d5.jpg" alt="Snow" style="left: 165px;
+    width: 24%;
+    z-index: 999;
+    position: relative;
+    top: -51px;
+    /* right: 180px; */
+    height: 254px;"></div>
+  <div class="bottom-right"><img src="images/3d7.jpg" alt="Snow" style="    width: 25%;
+    position: relative;
+    z-index: 999;
+    bottom: 256px;
+    right: -800px;
+    height: 170px"></div>
+  <div class="centered"><img src="images/3d1.jpg" alt="Snow" style="width: 92%;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 165px;"></div>  
+     <div class="top-right"><img src="images/3d6.jpg" alt="Snow" style="left: -383px;
+    width: 59%;
+    position: relative;
+    position: ab;
+    top: 27px;
+    /* right: 180px; */
+    height: 140px;"></div></div> 
+	
+
+	<!-- <div class="hidden-xs hidden-md hidden-ms">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 97%;
+    margin-left: 16px;height:250px;">
+    Indicators
+   
+
+    Wrapper for slides
+    <div class="carousel-inner" style="height:250px;width:100%;">
+     <div class="item active">
+        <img src="images/dm.jpg" alt="" style="width:100%;height:250px;">
+      </div> 
+      <div class="item">
+        <img src="images/dm1.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/11.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+       <div class="item">
+        <img src="images/slide10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+
+      <div class="item">
+        <img src="images/2.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/ls.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/1.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/7.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/8.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      
+       <div class="item">
+        <a onclick="document.getElementById('id01').style.display='block'"><img src="images/slide11.jpg" alt="" style="width:100%;height:250px;"></a>
+      </div>
+      
+      
+    </div>
+
+    Left and right controls
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class=""></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class=""></span>
+      <span class="sr-only">Next</span>
+    </a>
+    
+  </div>
+  </div> -->
+  <div class="hide-on-desktop">
+		<div id="myCarousel1" class="carousel slide" data-ride="carousel" style="width: 109%;
+    margin-left: -14px;height:250px;">
+    <!-- Indicators -->
+   
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" style="height:250px;width:100%;">
+     <div class="item active">
+        <img src="images/dm.jpg" alt="" style="width:100%;height:250px;">
+      </div> 
+     <!--  <div class="item">
+        <img src="images/dm1.png" alt="" style="width:100%;height:250px;">
+      </div> -->
+      <div class="item">
+        <img src="images/11.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+       <div class="item">
+        <img src="images/slide10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+
+    <!--   <div class="item">
+        <img src="images/2.jpg" alt="" style="width:100%;height:250px;">
+      </div> -->
+      <div class="item">
+        <img src="images/10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/ls.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <!-- <div class="item">
+        <img src="images/1.png" alt="" style="width:100%;height:250px;">
+      </div> -->
+      <div class="item">
+        <img src="images/7.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/8.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      
+       <div class="item">
+        <a onclick="document.getElementById('id01').style.display='block'"><img src="images/slide11.jpg" alt="" style="width:100%;height:250px;"></a>
+      </div>
+      
+      
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+      <span class=""></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+      <span class=""></span>
+      <span class="sr-only">Next</span>
+    </a>
+    
+  </div>
+  </div>
+  </div>
+   </div>
+  </div>
+ <style>
+  
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+    box-shadow: 0 -1px 12px 0 rgba(50,50,50,.25);
+    height:210px;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 50px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+
+  </style>
+ 
+
+
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-md-2">
+ <h4 style="color:#456fcc;">Top Listing</h4>
+ <ul>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Hotel and Resorts</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Hospital</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Animal Care</li>
+    <li><i class="fa fa-circle" style="font-size: 7px;"></i>Automobile</li>
+     <li><i class="fa fa-circle" style="font-size: 7px;"></i>Autocar</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Baby Care</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Banquets</li>
+    <li><i class="fa fa-circle" style="font-size: 7px;"></i>Broadband Services</li>
+</ul>  
+<hr>
+<h4 style="color:#456fcc;">Popular Listing</h4>
+ <ul>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Hotel and Resorts</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Hospital</li>
+  <li><i class="fa fa-circle" style="font-size: 7px;"></i>Animal Care</li>
+    <li><i class="fa fa-circle" style="font-size: 7px;"></i>Automobile</li>
+     
+    <li><i class="fa fa-circle" style="font-size: 7px;"></i>Broadband Services</li>
+</ul>  
+<hr>
+
+ </div>
+ <div class="col-md-10"> 
+ 
+<div class="container-fluid">
+
+<style>
+.a{
+color:steelblue;
+}
+</style>
+    <div class="text">
+      <!-- <b><h4 style="margin:0px;"><a class="a" style="text-decoration: none;">Offer</a> &nbsp;Status</h4></b><br> -->
+      <b><h4 style="margin:0px;font-weight: bold; background-color: purple;
+  width: 400px;padding: 10px;
+  
+color:white;"><i class="fa fa-gift" aria-hidden="true" style="font-size: 25px;color: orange;"></i>Get Up to 50% Off on variouse Business</h4></b><br>
+    </div>
+   
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carouselABC" data-interval="false" style="height: 237px;">
+        <div class="carousel-inner">
+         <%  try{ 
+	String name=(String)session.getAttribute("name");
+    
+    connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="SELECT img from offer where current_date() between sdate and edate order by otime asc";
+resultSet = statement.executeQuery(sql);
+int i=1;
+while(resultSet.next()){
+	  System.out.println("i "+i);	
+if(i==1){
+System.out.println("hii scroll");
+ %>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3"><a href="#"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height: 235px;width: 133%;"></a></div>
+          </div>
+          <%}%><%else{ System.out.println("hii scroll 2"); %>
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3"><a href="#"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:235px;width:133%;"></a></div>
+          </div>
+          <%}i++;%>
+        <%
+}
+}
+catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+         
+        </div>
+        <a class="left carousel-control" href="#carouselABC" data-slide="prev" style="background: transparent;width: 5%;"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carouselABC" data-slide="next" style="background: transparent;width: 5%;"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div> 
+  </div>  
+
+
+
+
+
+</div>
+</div>
+</div>
+<br>
+<%-- <div class="container-fluid">
+ 
+  
+  
+   <!--  <div class="text-center">
+      <h2>New Arrival</h2>
+    
+  </div>   -->
+  <div class="text">
+      <!-- <b><h4 style="margin:0px;"><a class="a" style="text-decoration: none;">Offer</a> &nbsp;Status</h4></b><br> -->
+      <div class="col-md-6">
+      <b><h4 style="margin-top: 10px;margin:0px;font-weight: bold;">New Arrival</h4></b>
+      </div>
+      <div class="col-md-6">
+      <b><h4 style="float: right;margin-top: 10px;margin: 0px;font-weight: bold;"><form action="newarrival.jsp">
+      <input type="hidden" id="a1" name="city"   class="results1[0]" placeholder="Location?" value="Bengaluru"><!-- style="background-color:#fff;color:black;height:3.5rem;background-size:12.75pt;background-position-x:7.5pt;font-size:14px;border-radius: 50px; border-left-style: none;border-top-style: none;text-align: center;box-shadow:inset 0 0 5px #000;" -->
+						<input type="hidden"  id="l1" name="lat" value="12.9715987">
+						
+						<input type="hidden" id="ln1" name="lan" value="77.59456269999998"><input type="submit"  value="View All" style="    border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: #456fcc;"></form></h4></b>
+      </div>
+    </div>
+   <br><br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel123" data-interval="false" style="height:163px;">
+        <div class="carousel-inner" style="height:163px;">
+        <%  String c="";
+        try
+      
+				{	
+        	 
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				Statement s=connection.createStatement();
+				 String sq ="select c.id,c.BusinessTitle,c.category,c.coverimg,o.title,c.contact,o.sdate,o.edate,o.disc from category c join offer o on c.contact=o.contact where current_date() between sdate and edate order by otime asc";
+					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+				ResultSet r = s.executeQuery(sq);
+				int i=1;
+				int m=1;
+				while(r.next()){
+				  System.out.println("sssss");
+					c=r.getString("contact");
+				if(i==1){%>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-6" style="border-radius: 33px;border: 1px solid lightgray;background-color: #d3d3d36b;">
+            <div class="col-md-8" style="border-right: 1px solid lightgray;">
+            <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+						<input type="hidden"  name="category" value="<%=r.getString("category")%>">
+            
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                            <h4 style="color:#f50c37f5;"><%=r.getString("title") %></h4>
+                                              <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                         <h5 style="color: black;">(<%=text%> - <%=text1%>)</h5>
+                                             <br>
+                                            </div>
+                                       
+                                          
+                                        <div class="tcb-product-price" style="margin-top: -21px;">
+                                      
+                                         <a href="#" class="offtag"><h5 style="font-weight: bolder;margin-top: 7px; "><%=r.getString("disc")%>% Discount</h5></a>
+                                       
+                                        </div>
+                                        <div class="tcb-product-price" >
+                                      <div class="col-md-3">
+                                        <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:40px;width:40px;">
+          </div>
+          <div class="col-md-9">
+        <h4 style="margin-left: -21px;margin-top: -1px; color: black;"> <%=r.getString("BusinessTitle")%></h4>
+              <p><h5 style="margin-left: -27px;margin-top: -2px;color: black;">[<%=r.getString("category")%>]</h5></p>
+          </div>
+                                       
+                                        </div>
+
+                                         <div class="tcb-product-rating">
+                                         <div class="col-md-8">
+                                     
+                                        </div> 
+                                        <div class="col-md-4" style="margin-top:-28px;">
+                                        <input type="submit"  value="Know More"  style="float: inherit; border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;">
+                                        </div>
+                                        
+                                      </div><br> 
+                                    </div>
+                                    </form>
+                                    </div>
+                                    <div class="col-md-4">
+                                    <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height: 161px;margin-left: -15px; max-width: 176px;margin-top: 0px;border-top-right-radius: 33px; border-bottom-right-radius: 33px;">
+          
+                                    </div>
+            </div>
+          </div><%}else{
+        	  %>
+        	  
+        	  <div class="item">
+         <div class="col-xs-12 col-sm-6 col-md-6" style="border-radius: 33px;border: 1px solid lightgray;width:49%;margin-left:8px; background-color: #d3d3d36b;">
+            <div class="col-md-8" style="border-right: 1px solid lightgray;">
+            <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+						<input type="hidden"  name="category" value="<%=r.getString("category")%>">
+            
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                            <h4 style="color: #f50c37f5;"><%=r.getString("title") %></h4>
+                                              <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                         <h5 style="color: black;">(<%=text%> - <%=text1%>)</h5>
+                                             <br>
+                                            </div>
+                                       
+                                          
+                                        <div class="tcb-product-price" style="margin-top: -21px;">
+                                      
+                                         <a href="#" class="offtag"><h5 style="font-weight: bolder;margin-top: 7px; "><%=r.getString("disc")%>% Discount</h5></a>
+                                       
+                                        </div>
+                                        <div class="tcb-product-price" >
+                                      <div class="col-md-3">
+                                        <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:40px;width:40px;">
+          </div>
+          <div class="col-md-9">
+        <h4 style="margin-left: -21px;margin-top: -1px; color: black;"> <%=r.getString("BusinessTitle")%></h4>
+              <p><h5 style="margin-left: -27px;margin-top: -2px;color: black;">[<%=r.getString("category")%>]</h5></p>
+          </div>
+                                                           
+                                        </div>
+
+                                         <div class="tcb-product-rating">
+                                         <div class="col-md-8">
+                                     
+                                        </div> 
+                                        <div class="col-md-4" style="margin-top:-28px;">
+                                        <input type="submit"  value="Know More"  style="float: inherit; border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color:blue;;">
+                                        </div>
+                                        
+                                      </div><br> 
+                                    </div>
+                                    </form>
+                                    </div>
+                                    <div class="col-md-4">
+  <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height: 161px;margin-left: -15px; max-width: 176px;margin-top: 0px;border-top-right-radius: 33px; border-bottom-right-radius: 33px;">
+                    
+                                    </div>
+            </div>
+          </div> 
+          
+          <%}i++;m++;} %>
+          <input type="hidden" id="val" name="lan" value="<%=m%>">
+		<%
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+
+%>
+        
+   
+        
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel123" data-slide="prev" style="width: 3%;background: transparent;"> <i class="glyphicon glyphicon-chevron-left" style="color: black;"></i></a>
+        <a class="right carousel-control" href="#carousel123" data-slide="next" style="width: 3%;background: transparent;"> <i class="glyphicon glyphicon-chevron-right" style="color: black;"></i></a>
+      </div>
+    </div>
+  </div>  
+</div> --%>
+
+<div class="container-fluid">
+<div class="text">
+    <div class="col-md-6">
+      <b><h4 style="margin-top: 10px;margin:0px;font-weight: bold;font-style: oblique">New Arrival</h4></b>
+      </div>
+      <div class="col-md-6">
+      <b><h4 style="float: right;margin-top: 10px;margin: 0px;font-weight: bold;"><form action="topshopping.jsp">
+      <input type="hidden" id="a1" name="city"   class="results1[0]" placeholder="Location?" value="Bengaluru"><!-- style="background-color:#fff;color:black;height:3.5rem;background-size:12.75pt;background-position-x:7.5pt;font-size:14px;border-radius: 50px; border-left-style: none;border-top-style: none;text-align: center;box-shadow:inset 0 0 5px #000;" -->
+						<input type="hidden"  id="l1" name="lat" value="12.9715987">
+						
+						<input type="hidden" id="ln1" name="lan" value="77.59456269999998"><input type="submit"  value="View All" style="border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: #456fcc;"></form></h4></b>
+      </div>
+    </div>
+    <br><br>
+<div class="row" style="border-bottom: .0625rem solid rgba(0,0,0,.12);border-top: .0625rem solid rgba(0,0,0,.12);">
+                         <div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/animalc.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Animal Care</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/dree.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Textile and Sleepers</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/ac.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Auto Car</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/bc.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Baby Care</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/bc.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Baby Care</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/book.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 95px;color: black;"><b>Book Shop</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a></div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/dree.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Textile and Sleepers</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						<div class="col-xs-3" style=" border-right: .0625rem solid rgba(0,0,0,.12);border-left: .0625rem solid rgba(0,0,0,.12);border-bottom: .0625rem solid rgba(0,0,0,.12);">
+						<a href="searchmenu.jsp?category=Animals Care" style="text-decoration: none;"><br><img src="offerimg/ac.jpg" width="70px;" height="70px;" style="margin-left: 96px;"><br><br><span style="margin-left: 103px;color: black;"><b>Auto Car</b><br><h6 style="margin-left: 105px; color: #2caf2c;">Upto 40% Off</h6></span></a>
+						</div>
+						
+						</div>
+</div>
+<br>
+<!-- <div class="container-fluid">
+<div class="text-center">
+      <h2>Advertise</h2>
+   
+  </div> 
+  <div class="text">
+     
+      <b><h4 style="margin:0px;font-weight: bold;">Advertise</h4></b><br>
+    </div>
+   
+<div id="myCarouselad" class="carousel slide" data-ride="carousel" style="width: 97%;
+    margin-left: 16px;height:250px;">
+   
+    <div class="carousel-inner" style="height:250px;width:100%;">
+     <div class="item active">
+        <img src="images/dm.jpg" alt="" style="width:100%;height:250px;">
+      </div> 
+      <div class="item">
+        <img src="images/dm1.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/11.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+       <div class="item">
+        <img src="images/slide10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+
+      <div class="item">
+        <img src="images/2.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/10.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/ls.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/1.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/7.png" alt="" style="width:100%;height:250px;">
+      </div>
+      <div class="item">
+        <img src="images/8.jpg" alt="" style="width:100%;height:250px;">
+      </div>
+      
+       <div class="item">
+        <a onclick="document.getElementById('id01').style.display='block'"><img src="images/slide11.jpg" alt="" style="width:100%;height:250px;"></a>
+      </div>
+      
+      
+    </div>
+
+   
+    <a class="left carousel-control" href="#myCarouselad" data-slide="prev">
+      <span class=""></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    
+    <a class="right carousel-control" href="#myCarouselad" data-slide="next">
+      <span class=""></span>
+      <span class="sr-only">Next</span>
+    </a>
+    
+  </div>
+
+</div>  -->
+
+<br>
+
+<div class="container-fluid">
+ 
+  
+  <!-- <div class="text-center">
+      <h2>Top Shopping Offer's</h2>
+   
+  </div>  --> 
+  <div class="text">
+    <div class="col-md-6">
+      <b><h4 style="margin-top: 10px;margin:0px;font-weight: bold;font-style: oblique">Top Shopping Offer's</h4></b>
+      </div>
+      <div class="col-md-6">
+      <b><h4 style="float: right;margin-top: 10px;margin: 0px;font-weight: bold;"><form action="topshopping.jsp">
+      <input type="hidden" id="a1" name="city"   class="results1[0]" placeholder="Location?" value="Bengaluru"><!-- style="background-color:#fff;color:black;height:3.5rem;background-size:12.75pt;background-position-x:7.5pt;font-size:14px;border-radius: 50px; border-left-style: none;border-top-style: none;text-align: center;box-shadow:inset 0 0 5px #000;" -->
+						<input type="hidden"  id="l1" name="lat" value="12.9715987">
+						
+						<input type="hidden" id="ln1" name="lan" value="77.59456269999998"><input type="submit"  value="View All" style="border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: #456fcc;"></form></h4></b>
+      </div>
+    </div>
+    <br><br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel1234" data-interval="false" style="height:305px;margin-left: 52px;">
+        <div class="carousel-inner">
+        <%  String c2="";
+        try
+      
+				{	
+        	 
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				Statement s=connection.createStatement();
+				 String sq ="select c.BusinessTitle,c.id,c.category,c.coverimg,o.title,c.contact,o.sdate,o.edate,o.disc from category c join offer o on c.contact=o.contact where current_date() between sdate and edate";
+					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+				ResultSet r = s.executeQuery(sq);
+				int i=1;
+				int m=1;
+				while(r.next()){
+					c2=r.getString("contact");
+				if(i==1){%>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3" style="border: 2px solid;width:23%;float: left;margin: 3px;border-top-right-radius: 29px;border-bottom-left-radius: 29px;">
+           <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+            <input type="hidden"  name="category" value="<%=r.getString("category")%>">
+           <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;margin-top: 16px;">
+            <%-- <style>
+            
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+            </style>
+            <div class="top-right"><button class="button" style="border-radius: 58%;
+    background: purple;
+    padding: 12px;
+    color: white;
+    top: -21px;
+    right: -16px;"><%=r.getString("disc")%>%</button></div> --%>
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                         <center><h4 style="color: black;"><%=r.getString("BusinessTitle") %><h5 style="color: black;"><%=r.getString("category")%></h5></h4></center>
+                                        
+                                            <br></div>
+                                             
+                                        <div class="tcb-product-rating" style="margin-top: -26px; margin-left: 34px;">
+                                        <%
+try{ 
+	Statement statement1 = null;
+	ResultSet resultSet1 = null;
+
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement1=connection.createStatement();
+String sql1 ="SELECT  avg(rating) from review where contact='"+c2+"'";
+resultSet1 = statement1.executeQuery(sql1);%>
+<%  while(resultSet1.next()){ %>		
+									<%String rating=resultSet1.getString(1);
+String ra=resultSet1.getString(1);
+									
+									System.out.println("rating"+rating);
+									
+									if(rating==null)
+									{
+										ra="6";
+									}
+									 
+									double ir=Double.parseDouble(ra);
+									System.out.println("ir"+ir);
+									 
+									 if(rating==null)
+									 {%>
+                                     <i class="fa fa-star " style="margin-right: -15px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+				
+									<%
+    }else if(ir>=3.1 && ir<=3.9){%>
+    <i class="fa fa-star checked " style="margin-right: -15px;"></i>
+							<i class="fa fa-star checked " style="margin-right: -14px;" ></i>
+							<i class="fa fa-star checked " style="margin-right: -14px;"></i>
+							<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>
+							<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+   
+       
+        <%}else if(rating.equals("3")){ %>
+									  
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%}else if(rating.equals("2")){ %>
+
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%} else if(rating.equals("1")){%>
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;" ></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%}else if(rating.equals("4")){ %>
+<i class="fa fa-star checked" style="margin-right: -15px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star" style="margin-right: -14px;" ></i>&nbsp;&nbsp;
+<%}else if(rating.equals("5")){ %>
+<i class="fa fa-star checked" style="margin-right: -15px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"  ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>&nbsp;&nbsp;
+<%}else if(ir>=1.1 && ir<=1.9){ %>
+<i class="fa fa-star checked " style="margin-right: -15px;" ></i>
+<i class="fa fa-star-half-o checked " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"  ></i>
+<i class="fa fa-star " style="margin-right: -14px;"  ></i>
+<i class="fa fa-star" style="margin-right: -14px;"  ></i>&nbsp;&nbsp;
+
+<%}else if(ir>=2.1 && ir<=2.9) {%>
+<i class="fa fa-star checked " style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+<%} else if(ir>=4.1 && ir<=4.9){%>
+<i class="fa fa-star checked " style="margin-right: -15px;"></i>
+								<i class="fa fa-star checked " style="margin-right: -15px;" ></i>
+								<i class="fa fa-star checked " style="margin-right: -14px;"></i>
+								<i class="fa fa-star checked "style="margin-right: -14px;"></i>
+								<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+<%}else{ %>
+<i class="fa fa-star " style="margin-right: -15px;"></i>
+<i class="fa fa-star "  style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+									<%} %>
+
+<% }}
+catch(Exception e)
+{
+     out.println("wrong entry"+e);
+}
+%>       
+                                            
+                                            <%
+try{ 
+	Statement statement2 = null;
+	ResultSet resultSet2 = null;
+
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement2=connection.createStatement();
+String sql1 ="SELECT  count(contact) from review where contact='"+c2+"'";
+resultSet2 = statement2.executeQuery(sql1);%>
+										    
+												<%  while(resultSet2.next()){ %>
+                                            
+                                            <a href="#">(<%=resultSet2.getString(1) %> ratings)</a>
+                                            <%
+        }
+									  
+}
+catch(Exception e)
+{
+     out.println("wrong entry"+e);
+}
+%>
+                                            
+                                        </div>
+                                        <div class="tcb-hline"></div>
+                                        <div class="tcb-product-price">
+                                           <h5 style="margin-left: 52px;color: red;"><i><b><%=r.getString("title") %></b></i></h5>
+                                          
+                                         
+                                        <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>  <p> <center><h5 style="color: black;">
+                                        <%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>
+                                        </p>
+                                         <center ><input type="submit"  value="Know More"  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center>
+                                        </div>
+                                    </div>
+                                    </form>
+            </div>
+          </div><%}else{
+        	  %>
+        	  
+        	  <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3" style="border: 2px solid;width:23%;float: left;margin: 3px;border-top-right-radius: 29px;border-bottom-left-radius: 29px;">
+            <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+            <input type="hidden"  name="category" value="<%=r.getString("category")%>">
+         <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;margin-top: 16px;">
+            <%-- <style>
+            
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+            </style>
+            <div class="top-right"><button class="button" style="border-radius: 58%;
+    background: purple;
+    padding: 12px;
+    color: white;
+    top: -21px;
+    right: -16px;"><%=r.getString("disc")%>%</button></div> --%>
+            <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                           <center><h4 style="color: black;"><%=r.getString("BusinessTitle") %></h4></center>
+                                            <center ><h5 style="color: black;"><%=r.getString("category")%></h5></center><br></div>
+                                        <div class="tcb-product-rating" style="margin-top: -26px; margin-left: 34px;">
+                                                                               <%
+try{ 
+	Statement statement1 = null;
+	ResultSet resultSet1 = null;
+
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement1=connection.createStatement();
+String sql1 ="SELECT  avg(rating) from review where contact='"+c2+"'";
+resultSet1 = statement1.executeQuery(sql1);%>
+<%  while(resultSet1.next()){ %>		
+									<%String rating=resultSet1.getString(1);
+String ra=resultSet1.getString(1);
+									
+									System.out.println("rating"+rating);
+									
+									if(rating==null)
+									{
+										ra="6";
+									}
+									 
+									double ir=Double.parseDouble(ra);
+									System.out.println("ir"+ir);
+									 
+									 if(rating==null)
+									 {%>
+                                         <i class="fa fa-star " style="margin-right: -15px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+   				
+										<%
+        }else if(ir>=3.1 && ir<=3.9){%>
+        <i class="fa fa-star checked " style="margin-right: -15px;"></i>
+								<i class="fa fa-star checked " style="margin-right: -14px;" ></i>
+								<i class="fa fa-star checked " style="margin-right: -14px;"></i>
+								<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>
+								<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+       
+        <%}else if(rating.equals("3")){ %>
+									  
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%}else if(rating.equals("2")){ %>
+
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%} else if(rating.equals("1")){%>
+<i class="fa fa-star checked" style="margin-right: -15px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;" ></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+
+<%}else if(rating.equals("4")){ %>
+<i class="fa fa-star checked" style="margin-right: -15px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star" style="margin-right: -14px;" ></i>&nbsp;&nbsp;
+<%}else if(rating.equals("5")){ %>
+<i class="fa fa-star checked" style="margin-right: -15px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;"  ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>&nbsp;&nbsp;
+<%}else if(ir>=1.1 && ir<=1.9){ %>
+<i class="fa fa-star checked " style="margin-right: -15px;" ></i>
+<i class="fa fa-star-half-o checked " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"  ></i>
+<i class="fa fa-star " style="margin-right: -14px;"  ></i>
+<i class="fa fa-star" style="margin-right: -14px;"  ></i>&nbsp;&nbsp;
+
+<%}else if(ir>=2.1 && ir<=2.9) {%>
+<i class="fa fa-star checked " style="margin-right: -15px;"></i>
+<i class="fa fa-star checked" style="margin-right: -14px;" ></i>
+<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+<%} else if(ir>=4.1 && ir<=4.9){%>
+<i class="fa fa-star checked " style="margin-right: -15px;"></i>
+								<i class="fa fa-star checked " style="margin-right: -15px;" ></i>
+								<i class="fa fa-star checked " style="margin-right: -14px;"></i>
+								<i class="fa fa-star checked "style="margin-right: -14px;"></i>
+								<i class="fa fa-star-half-o checked" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+<%}else{ %>
+<i class="fa fa-star " style="margin-right: -15px;"></i>
+<i class="fa fa-star "  style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star " style="margin-right: -14px;"></i>
+<i class="fa fa-star" style="margin-right: -14px;"></i>&nbsp;&nbsp;
+									<%} %>
+
+<% }}
+catch(Exception e)
+{
+     out.println("wrong entry"+e);
+}
+%> 
+                                            <%
+try{ 
+	Statement statement2 = null;
+	ResultSet resultSet2 = null;
+
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement2=connection.createStatement();
+String sql1 ="SELECT  count(contact) from review where contact='"+c2+"'";
+resultSet2 = statement2.executeQuery(sql1);%>
+										    
+												<%  while(resultSet2.next()){ %>
+                                            
+                                            <a href="#">(<%=resultSet2.getString(1) %> ratings)</a>
+                                            <%
+        }
+									  
+}
+catch(Exception e)
+{
+     out.println("wrong entry"+e);
+}
+%>
+                                            
+                                        </div>
+                                        <div class="tcb-hline"></div>
+                                        <div class="tcb-product-price">
+                                           <h5 style="margin-left: 52px;color: red;"><i><b><%=r.getString("title") %></b></i></h5>
+                                          
+                                           
+                                         
+                                        <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>  <p> <center><h5 style="color: black;">
+                                        <%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>
+                                        </p>
+                                         <center ><input type="submit"  value="Know More"  style="float: inherit; border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center>
+                                        </div>
+                                    </div>
+                                    </form>
+            </div>
+          </div> 
+          
+          <%}i++;m++;} %>
+		<%
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+
+%>
+        
+   
+        
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel1234" data-slide="prev" style="width: 5%;background: transparent;"> <i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carousel1234" data-slide="next" style="width: 5%;background: transparent;"> <i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>  
+</div>
+<br>
+<%-- <div class="container-fluid">
+ 
+  
+  
+   <!--  <div class="text-center">
+      <h2>Hotel and Resorts</h2>
+    </div> -->
+<div class="text">
+      <!-- <b><h4 style="margin:0px;"><a class="a" style="text-decoration: none;">Offer</a> &nbsp;Status</h4></b><br> -->
+      <b><h4 style="margin:0px;font-weight: bold;">Hotel and Resorts</h4></b><br>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel12" data-interval="false" style="height:288px;">
+        <div class="carousel-inner">
+        <%  String c1="";
+        try
+      
+				{	
+        	 
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				Statement s=connection.createStatement();
+				 String sq ="select c.id,c.BusinessTitle,c.category,c.coverimg,o.title,c.contact,o.sdate,o.edate,o.disc from category c join offer o on c.contact=o.contact where c.category='Hotel and Resorts' and c.approval like '%Approved%' and current_date() between sdate and edate order by otime asc";
+					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+				ResultSet r = s.executeQuery(sq);
+				int i=1;
+				int m=1;
+				while(r.next()){
+				  System.out.println("sssss");
+					c1=r.getString("contact");
+				if(i==1){%>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+						<input type="hidden"  name="category" value="<%=r.getString("category")%>">
+            <a href="#"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;margin-top: 16px;"></a>
+          
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                             <center><h4 style="color: black;"><%=r.getString("BusinessTitle") %></h4></center>
+                                            <center ><h5 style="color: black;"><%=r.getString("category")%></h5></center>
+                                             <br>
+                                            </div>
+                                       
+                                          <div class="tcb-hline"> </div>
+                                        <div class="tcb-product-price">
+                                        <center style="margin-top: -26px;"><h5><%=r.getString("title") %><p style="color: red;margin-left: 73px;">(Upto <%=r.getString("disc") %>% Off)</p></h5></center> 
+                                        </div>
+                                          <div class="tcb-product-rating">
+                                        <center><h5 style="color: black;">  
+                                        <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                        <%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %></h5></center>
+                                         <center ><input type="submit"  value="Know More"  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center>
+                                        </div>
+                                      <br>
+                                    </div>
+                                     </form>
+            </div>
+          </div><%}else{
+        	  %>
+        	  
+        	  <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+            <input type="hidden"  name="category" value="<%=r.getString("category")%>">
+            <a href="#"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;margin-top: 16px;"></a>
+            
+           <div class="tcb-product-info">
+                                       <div class="tcb-product-title">
+                                        <br>
+                                             <center><h4 style="color: black;"><%=r.getString("BusinessTitle") %></h4></center>
+                                            <center ><h5 style="color: black;"><%=r.getString("category")%></h5></center>
+                                             <br>
+                                            </div>
+                                       
+                                          <div class="tcb-hline"> </div>
+                                        <div class="tcb-product-price">
+                                        <center style="margin-top: -26px;"><h5><%=r.getString("title") %><p style="color: red;margin-left: 73px;">(Upto <%=r.getString("disc") %>% Off)</p></h5></center> 
+                                        </div>
+                                        <div class="tcb-product-rating">
+                                        <center><h5 style="color: black;">  
+                                        <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                        <%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %></h5></center>
+                                         <center ><input type="submit"  value="Know More"  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center>
+                                        </div>
+                                      <br>
+                                    </div>
+                                     </form>
+            </div>
+          </div> 
+          
+          <%}i++;m++;} %>
+          <input type="hidden" id="val" name="lan" value="<%=m%>">
+		<%
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+
+%>
+        
+   
+        
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel12" data-slide="prev" style="width: 5%;"> <i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carousel12" data-slide="next" style="width: 5%;"> <i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>  
+</div> --%>
+
+<div class="container-fluid">
+ 
+  
+  
+   <!--  <div class="text-center">
+      <h2>Hotel and Resorts</h2>
+    </div> -->
+<div class="text">
+      <!-- <b><h4 style="margin:0px;"><a class="a" style="text-decoration: none;">Offer</a> &nbsp;Status</h4></b><br> -->
+      <b><h4 style="margin:0px;font-weight: bold;font-style: oblique">Hotel and Resorts</h4></b><br>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel12" data-interval="false" style="height:288px;">
+        <div class="carousel-inner">
+        <%  String c1="";
+        try
+      
+				{	
+        	 
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				Statement s=connection.createStatement();
+				 String sq ="select c.id,c.BusinessTitle,c.category,c.coverimg,o.title,c.contact,o.sdate,o.edate,o.disc from category c join offer o on c.contact=o.contact where c.category='Hotel and Resorts' and c.approval like '%Approved%' and current_date() between sdate and edate order by otime asc";
+					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+				ResultSet r = s.executeQuery(sq);
+				int i=1;
+				int m=1;
+				while(r.next()){
+				  System.out.println("sssss");
+					c1=r.getString("contact");
+				if(i==1){%>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+						<input type="hidden"  name="category" value="<%=r.getString("category")%>">
+            <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height: 96px; width: 56%; margin-top: 80px;margin-left: 51px;">
+          <style>
+            
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+            </style>
+            <div class="top-right"><button class="button" style="border-radius: 58%;
+    background:orange;
+    padding: 5px;
+    color: white;
+    top: -21px;
+    right: -16px;"><h6><%=r.getString("disc")%>% Off</h6></button></div>
+          <br>
+           <div class="tcb-product-info">
+                                       <div class="tcb-product-title">
+                                        <br>
+                                         
+                                                <center ><h4><input type="submit"  value='<%=r.getString("title")%>'  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color:black;"></h4></center>
+                                           
+                                             <br>
+                                            </div>
+                                       
+                                          
+                                        <div class="tcb-product-rating">
+                                        
+                                        <!--  <center ><input type="submit"  value="Know More"  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center> -->
+                                        </div>
+                                      <br>
+                                    </div>
+                                     </form>
+            </div>
+          </div><%}else{
+        	  %>
+        	  
+        	  <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <form action="searchInMain.jsp">
+            <input type="hidden" id="autocomplete<%=m %>" class="results3[0]" name="city" value="Bengaluru" >
+
+			<input type="hidden"  id="latitud<%=m %>"  name="lat" value="12.9715987">
+						<input type="hidden" id="langitud<%=m %>"  name="lan" value="77.59456269999998">
+						
+						<input type="hidden"  name="title" value="<%=r.getString("id") %>">
+            <input type="hidden"  name="category" value="<%=r.getString("category")%>">
+           <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("coverimg")%>&content_type=image/jpeg" class="img-responsive" style="height: 96px;width: 56%; margin-top: 80px; margin-left: 51px;">
+            <style>
+            
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+            </style>
+            <div class="top-right"><button class="button" style="border-radius: 58%;
+    background:orange;
+    padding: 5px;
+    color: white;
+    top: -21px;
+    right: -16px;"><h6><%=r.getString("disc")%>% Off</h6></button></div>
+            <br>
+           <div class="tcb-product-info">
+                                       <div class="tcb-product-title">
+                                        <br>
+                                         <center ><h4><input type="submit"  value='<%=r.getString("title")%>'  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: black;"></h4></center>
+                                           
+                                             <br>
+                                            </div>
+                                       
+                                          
+                                        <div class="tcb-product-rating">
+                                        
+                                      <!--    <center ><input type="submit"  value="Know More"  style="float: inherit;border-bottom: 0px;border-top: 0px;border-left: 0px;border-right: 0px;background: transparent;color: blue;"></center> -->
+                                        </div>
+                                      <br>
+                                    </div>
+                                     </form>
+            </div>
+          </div> 
+          
+          <%}i++;m++;} %>
+          <input type="hidden" id="val" name="lan" value="<%=m%>">
+		<%
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+
+%>
+        
+   
+        
+         
+         
+        </div>
+        <a class="left carousel-control" href="#carousel12" data-slide="prev" style="width: 5%;background: transparent;"> <i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carousel12" data-slide="next" style="width: 5%;background: transparent;"> <i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>  
+</div>
+<br>
+<style>
+#exTab1 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+#exTab2 h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+
+
+#exTab3 .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+
+</style>
+
+<!-- <div class="text-center">
+<h2>Movie Offer's</h2>
+</div> -->
+<div class="text">
+   
+      <b><h4 style="margin:0px;font-weight: bold;margin-top: 10px;margin-left: 16px;font-style: oblique">Movie Offer's</h4><img src=offerimg/movie.jpg style="margin-top: -46px;width: 40px;height: 50px;margin-left: 139px;"></b><br>
+    </div>
+<div id="exTab2" class="container-fluid">	
+<ul class="nav nav-tabs" style="border-bottom: 0px;">
+			<li class="" style="width:18%">
+        <a  href="#1" data-toggle="tab" style="color:black;width:100%"><center>Kannada</center></a>
+			</li>
+			<li style="width:18%"><a href="#2" data-toggle="tab" style="color:black;width:100%">Telugu</a>
+			</li>
+			<li style="width:18%"><a href="#3" data-toggle="tab" style="color:black;width:100%">Tamil</a>
+			</li>
+			<li style="width:18%"><a href="#4" data-toggle="tab" style="color:black;width:100%">Hindi</a>
+			</li >
+			<li style="width:18%"><a href="#5" data-toggle="tab" style="color:black;width:100%">English</a>
+			</li>
+			<li style="width:10%"><a href="#6" data-toggle="tab" style="color:red;width:100%"><i class="fa fa-close" style="font-size:20px"></i></a>
+			</li>
+		</ul>
+
+			<div class="tab-content ">
+			 
+			 
+			 
+			 <br>
+			  <div class="tab-pane" id="1">
+		 <% try{
+        		  Statement s1=null;
+              	ResultSet r1=null;
+      				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+      				Statement s=connection.createStatement();
+      				 s1=connection.createStatement();
+      				 String sq ="select * from movieoffer where lang='Kannada'";
+      					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+      				ResultSet r = s.executeQuery(sq);
+      		 r1 = s1.executeQuery(sq);
+      				int i=1;
+      				int m=1;
+      				if(r1.next()){
+      				while(r.next()){
+      				 %>
+          
+<div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            
+          
+            <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;">
+            
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                           <center><h5 style="color: black;"><%=r.getString("name")%></h5></center>
+                                             <center><h6 style="color: black;color: red;"><b><%=r.getString("title")%></b></h6></center>
+                                            </div>
+                                       
+                                          <div class="tcb-hline"> </div>
+                                        <div class="tcb-product-price">
+                                        
+                                        </div>
+                                         <div class="tcb-product-rating">
+                                          <center><h5 style="color: black;"> 
+                                         <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                        (<%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>)</h5></center>
+                                        </div>
+                                      <br>
+                                    </div>
+                                   </div>
+                                       </div>
+                                       <%}}else{%>
+                                   <h3>No Offers</h3>
+                                         <%
+
+} }catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="tab-pane" id="2">
+        		  <% 
+        		  try{
+        		  Statement s1=null;
+              	ResultSet r1=null;
+      				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+      				Statement s=connection.createStatement();
+      				 s1=connection.createStatement();
+      				 String sq ="select * from movieoffer where lang='Telugu'";
+      					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+      				ResultSet r = s.executeQuery(sq);
+      		 r1 = s1.executeQuery(sq);
+      				int i=1;
+      				int m=1;
+      				if(r1.next()){
+      				while(r.next()){
+      				 %>
+          
+<div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            
+          
+            <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;">
+            
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                             <center><h5 style="color: black;"><%=r.getString("name")%></h5></center>
+                                             <center><h6 style="color: black;color: red;"><b><%=r.getString("title")%></b></h6></center>
+                                            </div>
+                                       
+                                          <div class="tcb-hline"> </div>
+                                        <div class="tcb-product-price">
+                                        
+                                        </div>
+                                         <div class="tcb-product-rating">
+                                          <center><h5 style="color: black;"> 
+                                         <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                        (<%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>)</h5></center>
+                                        </div>
+                                      <br>
+                                    </div>
+                                   </div>
+                                       </div>
+                                       <%}}else{%>
+                                   <h3>No Offers</h3>
+                                         <%
+
+} }catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+				</div>
+        <div class="tab-pane" id="3">
+           <%  
+        try
+      
+				{	
+        	Statement s1=null;
+        	ResultSet r1=null;
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				Statement s=connection.createStatement();
+				 s1=connection.createStatement();
+				 String sq ="select * from movieoffer where lang='Tamil'";
+					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+				ResultSet r = s.executeQuery(sq);
+		 r1 = s1.executeQuery(sq);
+				int i=1;
+				int m=1;
+				if(r1.next()){
+				while(r.next()){
+				 %>
+          
+<div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            
+          
+            <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;">
+            
+           <div class="tcb-product-info">
+                                        <div class="tcb-product-title">
+                                        <br>
+                                             <center><h5 style="color: black;"><%=r.getString("name")%></h5></center>
+                                             <center><h6 style="color: black;color: red;"><b><%=r.getString("title")%></b></h6></center>
+                                            </div>
+                                       
+                                          <div class="tcb-hline"> </div>
+                                        <div class="tcb-product-price">
+                                        
+                                        </div>
+                                         <div class="tcb-product-rating">
+                                          <center><h5 style="color: black;"> 
+                                         <%String sdate=r.getString("sdate");
+                                        Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                        <%String edate=r.getString("edate");
+                                        Date date1=Date.valueOf(edate);//converting string into sql date.
+                                		
+                                		/*	Date date ="" ; // wherever you get this*/
+                                			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                                			String text1 = df1.format(date1);
+                                			%>
+                                        (<%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>)</h5></center>
+                                        </div>
+                                      <br>
+                                    </div>
+                                   </div>
+                                       </div>
+                                       
+                                       <%}}else{%>
+                                   <h3>No Offers</h3>
+                                         <%
+
+} }catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+				</div>
+				<div class="tab-pane" id="4">
+            <%  
+            try{
+      		  Statement s1=null;
+            	ResultSet r1=null;
+    				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+    				Statement s=connection.createStatement();
+    				 s1=connection.createStatement();
+    				 String sq ="select * from movieoffer where lang='Hindi'";
+    					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+    				ResultSet r = s.executeQuery(sq);
+    		 r1 = s1.executeQuery(sq);
+    				int i=1;
+    				int m=1;
+    				if(r1.next()){
+    				while(r.next()){
+    				 %>
+        
+<div class="item">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+          
+        
+          <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;">
+          
+         <div class="tcb-product-info">
+                                      <div class="tcb-product-title">
+                                      <br>
+                                          <center><h5 style="color: black;"><%=r.getString("name")%></h5></center>
+                                             <center><h6 style="color: black;color: red;"><b><%=r.getString("title")%></b></h6></center>
+                                          </div>
+                                     
+                                        <div class="tcb-hline"> </div>
+                                      <div class="tcb-product-price">
+                                      
+                                      </div>
+                                       <div class="tcb-product-rating">
+                                        <center><h5 style="color: black;"> 
+                                       <%String sdate=r.getString("sdate");
+                                      Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                      <%String edate=r.getString("edate");
+                                      Date date1=Date.valueOf(edate);//converting string into sql date.
+                              		
+                              		/*	Date date ="" ; // wherever you get this*/
+                              			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                              			String text1 = df1.format(date1);
+                              			%>
+                                      (<%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>)</h5></center>
+                                      </div>
+                                    <br>
+                                  </div>
+                                 </div>
+                                     </div>
+                                     <%}}else{%>
+                                 <h3>No Offers</h3>
+                                       <%
+
+} }catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+				</div>
+				<div class="tab-pane" id="5">
+          
+            <%  
+            try{
+      		  Statement s1=null;
+            	ResultSet r1=null;
+    				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+    				Statement s=connection.createStatement();
+    				 s1=connection.createStatement();
+    				 String sq ="select * from movieoffer where lang='English'";
+    					//String sql4 ="SELECT * ,round(( 3959 * acos ( cos ( radians('"+lati+"') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('"+lang+"') ) + sin ( radians('"+lati+"') ) * sin( radians( lat ) ) ) ),1) AS distance  FROM category c join offer o on c.contact=o.contact where approval like '%Approved%' and city like '%"+city+"%' and (c.category='"+category+"' or c.BusinessTitle like '%"+BusinessTitle+"%') and o.sdate=current_date() order by distance asc";
+    				ResultSet r = s.executeQuery(sq);
+    		 r1 = s1.executeQuery(sq);
+    				int i=1;
+    				int m=1;
+    				if(r1.next()){
+    				while(r.next()){
+    				 %>
+        
+<div class="item">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+          
+        
+          <img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=r.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:100px;width:100%;">
+          
+         <div class="tcb-product-info">
+                                      <div class="tcb-product-title">
+                                      <br>
+                                          <center><h5 style="color: black;"><%=r.getString("name")%></h5></center>
+                                             <center><h6 style="color: black;color: red;"><b><%=r.getString("title")%></b></h6></center>
+                                          </div>
+                                     
+                                        <div class="tcb-hline"> </div>
+                                      <div class="tcb-product-price">
+                                      
+                                      </div>
+                                       <div class="tcb-product-rating">
+                                        <center><h5 style="color: black;"> 
+                                       <%String sdate=r.getString("sdate");
+                                      Date date=Date.valueOf(sdate);//converting string into sql date.
+		System.out.println("hiii"+date);
+	/*	Date date ="" ; // wherever you get this*/
+		DateFormat df = new SimpleDateFormat("dd MMM yy");
+		String text = df.format(date);
+		System.out.println(text);%>
+                                      <%String edate=r.getString("edate");
+                                      Date date1=Date.valueOf(edate);//converting string into sql date.
+                              		
+                              		/*	Date date ="" ; // wherever you get this*/
+                              			DateFormat df1 = new SimpleDateFormat("dd MMM yy");
+                              			String text1 = df1.format(date1);
+                              			%>
+                                      (<%=text%>&nbsp;<b>-</b>&nbsp;<%=text1 %>)</h5></center>
+                                      </div>
+                                    <br>
+                                  </div>
+                                 </div>
+                                     </div>
+                                     <%}}else{%>
+                                 <h3>No Offers</h3>
+                                       <%
+
+} }catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+				
+        
+				</div>
+				<div class="tab-pane" id="6">
+        
+				</div>
+				</div>
+			</div>
+			
+			
+			<br>
+			
+			<div class="container-fluid">
+
+
+
+   <!--  <div class="text-center">
+      <h2 style="margin:0px">Government Advertise</h2><br>
+    </div>
+    -->
+    <div class="text">
+      <!-- <b><h4 style="margin:0px;"><a class="a" style="text-decoration: none;">Offer</a> &nbsp;Status</h4></b><br> -->
+      <b><h4 style="margin:0px;font-weight: bold;margin-left: 1px;font-style: oblique">Government Advertise</h4></b><br>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carouselABCD" data-interval="false" style="width: 1357px;height: 190px;margin-left: -68px;">
+        <div class="carousel-inner">
+         <%  try{ 
+	
+    connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="SELECT img from govadd";
+resultSet = statement.executeQuery(sql);
+int i=1;
+while(resultSet.next()){
+	  System.out.println("i "+i);	
+if(i==1){
+System.out.println("hii scroll");
+ %>
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-3"><a href="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:200px;width:100%;"></a></div>
+          </div>
+          <%}%><%else{ System.out.println("hii scroll 2"); %>
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-3"><a href="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg"><img src="imageupload_Url?action=Display&file_location=F:/uploadimg/<%=resultSet.getString("img")%>&content_type=image/jpeg" class="img-responsive" style="height:200px;width:100%;"></a></div>
+          </div>
+          <%}i++;%>
+        <%
+}
+}
+catch (Exception e) {
+e.printStackTrace();
+}
+
+%> 
+         
+        </div>
+        <a class="left carousel-control" href="#carouselABCD" data-slide="prev" style="background: transparent;width: 5%;"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carouselABCD" data-slide="next" style="background: transparent;width: 5%;"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div> 
+  </div>  
+
+
+
+
+
+</div>
+</div>
+</div></div>
+			
+
+
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+	</div>
+	</div>
+	</div>
+	<br>
+	
+<style>
+.carousel-showmanymoveone
+{
+  .carousel-control
+  { 
+    width: 4%;
+    background-image:none;
+
+    &.left 
+    {
+      margin-left:15px;
+    }
+
+    &.right 
+    {
+      margin-right:15px;
+    }
+  }
+
+  .cloneditem-1, 
+  .cloneditem-2, 
+  .cloneditem-3
+  {
+    display: none;
+  }
+
+  .carousel-inner
+  {
+    @media all and (min-width: 768px)
+    {
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(50%, 0, 0);  
+          left: 0;
+        }
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-50%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }    
+      } 
+
+      > .active.left,
+      > .prev
+      {
+        left: -50%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  50%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-1 
+      {
+        display: block;
+      }
+    }
+
+    @media all and (min-width: 992px)
+    {    
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(25%, 0, 0);  
+          left: 0;
+        }    
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-25%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }
+      }
+
+      > .active.left,
+      > .prev
+      {
+        left: -25%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  25%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-2, 
+      .cloneditem-3
+      {
+        display: block;
+      }
+    }    
+  }
+}
+
+
+// demo setup only, not needed for carousel
+
+
+
+.title
+{
+  padding: 28px;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+	<script>
+	(function(){
+		  // setup your carousels as you normally would using JS
+		  // or via data attributes according to the documentation
+		  // https://getbootstrap.com/javascript/#carousel
+		  $('#carousel123').carousel({ pause:true, interval: false });
+		  $('#carouselABC').carousel({ pause:true, interval: false });
+		  $('#carouselABCD').carousel({ pause:true, interval: false });
+		}());
+
+		(function(){
+		  $('.carousel-showmanymoveone .item').each(function(){
+		    var itemToClone = $(this);
+
+		    for (var i=1;i<4;i++) {
+		      itemToClone = itemToClone.next();
+
+		      // wrap around if at end of item collection
+		      if (!itemToClone.length) {
+		        itemToClone = $(this).siblings(':first');
+		      }
+
+		      // grab item, clone, add marker class, add to collection
+		      itemToClone.children(':first-child').clone()
+		        .addClass("cloneditem-"+(i))
+		        .appendTo($(this));
+		    }
+		  });
+		}());
+	</script>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <style>
+            .tcb-product-info {
+  width:100%;
+}
+.tcb-product-title h4 {
+  margin-top: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tcb-product-rating {
+  color: #acacac;
+}
+.tcb-product-rating .active {
+  color: #FFB500;
+}
+.tcb-product-price {
+  color: firebrick;
+  font-size: 18px;
+}
+            </style>
+<style>
+.carousel-showmanymoveone
+{
+  .carousel-control
+  { 
+    width: 4%;
+    background-image:none;
+
+    &.left 
+    {
+      margin-left:15px;
+    }
+
+    &.right 
+    {
+      margin-right:15px;
+    }
+  }
+
+  .cloneditem-1, 
+  .cloneditem-2, 
+  .cloneditem-3
+  {
+    display: none;
+  }
+
+  .carousel-inner
+  {
+    @media all and (min-width: 768px)
+    {
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(50%, 0, 0);  
+          left: 0;
+        }
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-50%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }    
+      } 
+
+      > .active.left,
+      > .prev
+      {
+        left: -50%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  50%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-1 
+      {
+        display: block;
+      }
+    }
+
+    @media all and (min-width: 992px)
+    {    
+      @media (transform-3d), (-webkit-transform-3d)
+      {
+        > .item.active.right,
+        > .item.next
+        { 
+          transform: translate3d(25%, 0, 0);  
+          left: 0;
+        }    
+
+        > .item.active.left,
+        > .item.prev
+        { 
+          transform: translate3d(-25%, 0, 0);
+          left: 0;
+        }
+
+        > .item.left,
+        > .item.prev.right,
+        > .item.active
+        {
+          transform: translate3d(0, 0, 0);
+          left: 0;
+        }
+      }
+
+      > .active.left,
+      > .prev
+      {
+        left: -25%;
+      }
+
+      > .active.right,
+      > .next
+      {
+        left:  25%;
+      }
+
+      > .left,
+      > .prev.right,
+      > .active
+      {
+        left: 0;
+      }
+
+      .cloneditem-2, 
+      .cloneditem-3
+      {
+        display: block;
+      }
+    }    
+  }
+}
+
+
+// demo setup only, not needed for carousel
+
+
+.logo
+{
+  margin: 20px auto;
+  height: 100px;  
+  
+  @media only screen and (min-width : 768px) {  
+    margin: 28px;
+    float: left;
+  }
+}
+
+.title
+{
+  padding: 28px;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+	<script>
+	(function(){
+		  // setup your carousels as you normally would using JS
+		  // or via data attributes according to the documentation
+		  // https://getbootstrap.com/javascript/#carousel
+		  $('#carousel123').carousel({pause:true, interval: false });
+		  $('#carousel12').carousel({pause:true, interval: false });
+		  $('#carousel1234').carousel({pause:true, interval: false });
+		}());
+
+		(function(){
+		  $('.carousel-showmanymoveone .item').each(function(){
+		    var itemToClone = $(this);
+
+		    for (var i=1;i<4;i++) {
+		      itemToClone = itemToClone.next();
+
+		      // wrap around if at end of item collection
+		      if (!itemToClone.length) {
+		        itemToClone = $(this).siblings(':first');
+		      }
+
+		      // grab item, clone, add marker class, add to collection
+		      itemToClone.children(':first-child').clone()
+		        .addClass("cloneditem-"+(i))
+		        .appendTo($(this));
+		    }
+		  });
+		}());
+	</script>
+	
+
+<style>
+.con_01{
+	padding:50px 0;
+}
+.iconbox{
+	text-align: center;
+	width: 100%;
+}
+.icon{
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	border-radius: 50%;
+	border:2px solid #0077CC;
+	display:inline-block;
+	-webkit-transition: 0.5s ease 0s;
+	-moz-transition: 0.5s ease 0s;
+	-ms-transition: 0.5s ease 0s;
+	-o-transition: 0.5s ease 0s;
+	transition: 0.5s ease 0s;
+}
+.icon i{
+	font-size: 30px;
+	color: #f39c12;
+}
+
+.iconbox:hover .icon{
+	background-color: #0077CC;
+	border-radius: 0 100px 100px;
+}
+</style>
+			 
+			 
+			 
+				 
+				 
+			 
+		
+		</div>
+		
+		<%@include file="footer.html" %> 
+		</body>
+        <!--footer section end-->
+		<!-- Navigation-Js-->
+			<script type="text/javascript" src="js1/main.js"></script>
+			<script type="text/javascript" src="js1/classie.js"></script>
+		<!-- //Navigation-Js-->
+		<!-- js -->
+		<script type="text/javascript" src="js1/jquery.min.js"></script>
+		<!-- js -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js1/bootstrap.js"></script>
+		<script src="js1/bootstrap-select.js"></script>
+		<script>
+		  $(document).ready(function () {
+			var mySelect = $('#first-disabled2');
+
+			$('#special').on('click', function () {
+			  mySelect.find('option:selected').prop('disabled', true);
+			  mySelect.selectpicker('refresh');
+			});
+
+			$('#special2').on('click', function () {
+			  mySelect.find('option:disabled').prop('disabled', false);
+			  mySelect.selectpicker('refresh');
+			});
+
+			$('#basic2').selectpicker({
+			  liveSearch: true,
+			  maxOptions: 1
+			});
+		  });
+		</script>
+		<!-- language-select -->
+		<script type="text/javascript" src="js1/jquery.leanModal.min.js"></script>
+		<link href="css1/jquery.uls.css" rel="stylesheet"/>
+		<link href="css1/jquery.uls.grid.css" rel="stylesheet"/>
+		<link href="css1/jquery.uls.lcd.css" rel="stylesheet"/>
+		<!-- Source -->
+		<script src="js1/jquery.uls.data.js"></script>
+		<script src="js1/jquery.uls.data.utils.js"></script>
+		<script src="js1/jquery.uls.lcd.js"></script>
+		<script src="js1/jquery.uls.languagefilter.js"></script>
+		<script src="js1/jquery.uls.regionfilter.js"></script>
+		<script src="js1/jquery.uls.core.js"></script>
+		<script>
+					$( document ).ready( function() {
+						$( '.uls-trigger' ).uls( {
+							onSelect : function( language ) {
+								var languageName = $.uls.data.getAutonym( language );
+								$( '.uls-trigger' ).text( languageName );
+							},
+							quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+						} );
+					} );
+				</script>
+		<!-- //language-select -->
+		<script type="text/javascript" src="js1/jquery.flexisel.js"></script><!-- flexisel-js -->	
+					<script type="text/javascript">
+						 $(window).load(function() {
+							$("#flexiselDemo3").flexisel({
+								visibleItems:1,
+								animationSpeed: 1000,
+								autoPlay: true,
+								autoPlaySpeed: 5000,    		
+								pauseOnHover: true,
+								enableResponsiveBreakpoints: true,
+								responsiveBreakpoints: { 
+									portrait: { 
+										changePoint:480,
+										visibleItems:1
+									}, 
+									landscape: { 
+										changePoint:640,
+										visibleItems:1
+									},
+									tablet: { 
+										changePoint:768,
+										visibleItems:1
+									}
+								}
+							});
+							
+						});
+					   </script>
+		<!-- Slider-JavaScript -->
+			<script src="js1/responsiveslides.min.js"></script>	
+			 <script>
+			$(function () {	
+			  $("#slider").responsiveSlides({
+				auto: true,
+				pager: false,
+				nav: true,
+				speed: 500,
+				maxwidth: 800,
+				namespace: "large-btns"
+			  });
+
+			});
+		  </script>
+		<!-- //Slider-JavaScript -->
+		<!-- here stars scrolling icon -->
+			 <script type="text/javascript">
+				$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear' 
+						};
+					*/
+										
+					$().UItoTop({ easingType: 'easeOutQuart' });
+										
+					});
+			</script> 
+			<!-- start-smoth-scrolling -->
+			 <script type="text/javascript" src="js1/move-top.js"></script>
+			<script type="text/javascript" src="js1/easing.js"></script>
+			
+			<script src="js1/jquery.min1.js"></script>
+	 <script src="js/bootstrap.js" type="text/javascript"></script> 
+	 <script src="js/materialize.min.js" type="text/javascript"></script> 
+    <script src="js/custom.js"></script> 
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+			</script> 
+			
+<script>
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+
+});
+
+$('.tab a,.links a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+}); 
+</script>
+<script type="text/javascript">
+if(window.location.href.includes("top1"))
+	{$(document).scrollTop(450);
+	}</script>
+	<script type="text/javascript">
+if(window.location.href.includes("top2"))
+	{$(document).scrollTop(450);
+	}</script>
+	
+	<script type="text/javascript">
+if(window.location.href.includes("top3"))
+	{$(document).scrollTop(450);
+	}</script>
+	<script type="text/javascript">
+if(window.location.href.includes("top4"))
+	{$(document).scrollTop(450);
+	}</script>
+	<script type="text/javascript">
+if(window.location.href.includes("top5"))
+	{$(document).scrollTop(450);
+	}</script>
+	<script type="text/javascript">
+if(window.location.href.includes("top6"))
+	{$(document).scrollTop(450);
+	}</script>
+			<!-- start-smoth-scrolling -->
+		<!-- //here ends scrolling icon -->
+
+
+
+	<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+<!-- <script type="text/javascript"> 
+  var geocoder;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+} 
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng)
+}
+
+function errorFunction(){
+    alert("Geocoder failed");
+}
+
+  function initialize() {
+    geocoder = new google.maps.Geocoder();
+
+
+
+  }
+
+  function codeLatLng(lat, lng) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+        if (results[1]) {
+        	
+         //formatted address
+         //alert(results[0].formatted_address)
+		 document.getElementsByClassName("results[0]")[0].value=results[0].formatted_address;
+		 document.getElementById("lan").value=lng;
+		  document.getElementById("lat").value=lat;
+        //find country name
+             for (var i=0; i<results[0].address_components.length; i++) {
+            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                    //this is the object you are looking for
+                    city= results[0].address_components[i];
+                    break;
+                }
+            }
+        }
+        //city data
+        //alert(city.short_name + " " + city.long_name)
+
+
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+</script>  -->
+<script>
+var city, state;
+var geocoder;
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+}
+//Get the latitude and the longitude;
+function successFunction(position) {
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  codeLatLng(lat, lng);
+}
+
+function errorFunction() {
+  console.log("Geocoder failed");
+}
+
+function codeLatLng(lat, lng) {
+  var latlng = new google.maps.LatLng(lat, lng);
+  geocoder.geocode({
+    'latLng': latlng
+  }, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+   	   
+   	  
+        //find country name
+        for (var i = 0; i < results[0].address_components.length; i++) {
+          for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+            if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
+              //this is the object you are looking for
+              city = results[0].address_components[i];
+              break;
+            }
+          }
+        }
+
+         for (var i = 0; i < results[0].address_components.length; i++) {
+          for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+            if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
+              //this is the object you are looking for
+              state = results[0].address_components[i];
+              break;
+            }
+          }
+        }
+        /*  alert(city.long_name +", "+ state.long_name); */
+        alert(city.short_name);
+         //document.getElementsByClassName("results[0]")[0].value=loc;
+         if(city.long_name == "Bangalore Rural" || city.long_name == "Bangalore Urban")
+		 {
+		 city.long_name="Bengaluru";
+		 }
+       document.getElementsByClassName("results[0]")[0].value=city.long_name; 
+      
+       document.getElementsByClassName("results1[0]")[0].value=city.long_name; 
+        document.getElementById("lat").value=lat;
+        document.getElementById("lan").value=lng;
+       
+      /*   document.getElementById("lat2").value=lat;
+        document.getElementById("lan3").value=lng; */
+      } else {
+        console.log("City name not available");
+
+      }
+    } else {
+      console.log("Geocoder failed due to: ", status);
+    }
+  });
+}
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initialize();
+}, false);
+</script>
+
+
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDidKGjHVKSzG0la9YbX33bfBqH7e_9HTw&libraries=places&callback=initAutocomplete"
+                         async defer></script>
+					<script>
+					
+					var placeSearch, autocomplete;
+					var componentForm = {
+					  street_number: 'short_name',
+					  route: 'long_name',
+					  locality: 'long_name',
+					  administrative_area_level_1: 'short_name',
+					  country: 'long_name',
+					  postal_code: 'short_name'
+					};
+
+					function initAutocomplete() {
+					  // Create the autocomplete object, restricting the search to geographical
+					  // location types.
+					  autocomplete = new google.maps.places.Autocomplete(
+					      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+					      {types: ['geocode']});
+
+					  // When the user selects an address from the dropdown, populate the address
+					  // fields in the form.
+					  autocomplete.addListener('place_changed', fillInAddress);
+					}
+
+					function fillInAddress() {
+					  // Get the place details from the autocomplete object.
+					  var place = autocomplete.getPlace();
+					  //alert(place)
+					  var p=document.getElementById("autocomplete").value;
+					  var lat=place.geometry.location.lat();
+					  var lng=place.geometry.location.lng();
+					  $("#a1").val(p)
+					  $("#lat").val(lat)
+					  $("#lan").val(lng)
+					  $("#l1").val(lat)
+					  $("#ln1").val(lng)
+					   
+					   var s=document.getElementById("val").value;
+				         
+				         for(var ss=1;ss<=s;ss++){
+				        	
+				         
+				        	$("#autocomplete"+ss).val(p)
+				       		$("#latitud"+ss).val(lat)
+							$("#langitud"+ss).val(lng)
+				         } 
+				          
+					 /*  $("#lat2").val(lat)
+					  $("#lan2").val(lng) */
+					  
+
+					/*   for (var component in componentForm) {
+					    document.getElementById(component).value = '';
+					    document.getElementById(component).disabled = false;
+					  } */
+
+					  // Get each component of the address from the place details
+					  // and fill the corresponding field on the form.
+					  for (var i = 0; i < place.address_components.length; i++) {
+					    var addressType = place.address_components[i].types[0];
+					    if (componentForm[addressType]) {
+					      var val = place.address_components[i][componentForm[addressType]];
+					      document.getElementById(addressType).value = val;
+					    }
+					  }
+					}
+
+					// Bias the autocomplete object to the user's geographical location,
+					// as supplied by the browser's 'navigator.geolocation' object.
+					function geolocate() {
+					  if (navigator.geolocation) {
+					    navigator.geolocation.getCurrentPosition(function(position) {
+					      var geolocation = {
+					        lat: position.coords.latitude,
+					        lng: position.coords.longitude
+					      };
+					      var circle = new google.maps.Circle({
+					        center: geolocation,
+					        radius: position.coords.accuracy
+					      });
+					      autocomplete.setBounds(circle.getBounds());
+					    });
+					  }
+					}
+					</script>	
+					   <script type="text/javascript">
+ //<![CDATA[ 
+ // array of possible countries in the same order as they appear in the country selection list 
+ var categoryLists = new Array(4) 
+ categoryLists["empty"] = ["Select a Category"]; 
+ categoryLists["Doctorate/Phd"] = ["Ph.D/Doctorate",
+	 "MPHIL",
+	 "Others"]; 
+ categoryLists["Masters/Post Graduation"] = ["CA",
+	 "CS",
+	 "DM", 
+	 "ICWA(CMA)",
+	 "Integrated PG", 
+	 "LLM",
+	 "MA ",
+	 "M.Arch",
+	 "M.Ch",
+	 "M.Com",
+	 "M.Des",
+	 "M.Ed",
+	 "M.Pharama",
+	 "MDS",
+	 "MFA",
+	 "MS/MSC(Science)",
+	 "M.Tech",
+	 "MBA (PGDM)",
+	 "MCA",
+	 "Medical MS/MD",
+	 "PG Diploma",
+	 "MVSC",
+	 "MCM",
+	 "Others"]; 
+ categoryLists["Graduation/Diploma"] = ["BA",
+	 "BAMS",
+	 "B.Arch",
+	 "B.Des",
+	 "B.El.ED",
+	 "B.P.ED",
+	 "B.U.M.S",
+	 "BCA",
+	 "B.B.S /B.M.S",
+	 "B.COM",
+	 "BDA",
+	 "BDS",
+	 "BFA",
+	 "BHM",
+	 "B.PHARMA",
+	 "BSc",
+	 "B.TECH/BE",
+	 "BHMS",
+	 "LLB",
+	 "MBBS",
+	 "DIPLOMA",
+	 "BVSC",
+	 "Others"]; 
+ categoryLists["12th/PUC"] = ["Science",
+	 "Commerce ",
+	 "Arts",
+	 "Computer Science",
+	 "Electronics",
+	 "ITI"];
+ categoryLists["10th/SSLC"] = ["10th"];
+ categoryLists["Below 10th"] = ["10th fail"];
+ function categoryChange(selectObj) { 
+	 // get the index of the selected option 
+	 var idx = selectObj.selectedIndex; 
+	 // get the value of the selected option 
+	 var which = selectObj.options[idx].value; 
+	 // use the selected option value to retrieve the list of items from the countryLists array 
+	 cList = categoryLists[which]; 
+	 // get the country select element via its known id 
+	 var cSelect = document.getElementById("sub-category"); 
+	 // remove the current options from the country select 
+	 var len=cSelect.options.length; 
+	 while (cSelect.options.length > 0) { 
+	 cSelect.remove(0); 
+	 } 
+	 var newOption; 
+	 // create new options 
+	 for (var i=0; i<cList.length; i++) { 
+	 newOption = document.createElement("option"); 
+	 newOption.value = cList[i];  // assumes option string and value are the same 
+	 newOption.text=cList[i]; 
+	 // add the new option 
+	 try { 
+	 cSelect.add(newOption);  // this will fail in DOM browsers but is needed for IE 
+	 } 
+	 catch (e) { 
+	 cSelect.appendChild(newOption); 
+	 } 
+	 } 
+	 $("#sub-category").material_select();
+	 } 
+	//]]>
+	</script>
+	<script>
+	/* var check = function() {
+		  if (document.getElementById('password').value ==
+		    document.getElementById('confirm_password').value) {
+		    document.getElementById('message').style.color = 'green';
+		    document.getElementById('message').innerHTML = 'matched';
+		  } else {
+		    document.getElementById('message').style.color = 'red';
+		    document.getElementById('message').innerHTML = 'not matched';
+		  }
+		} */
+		$('#password, #confirm_password').on('keyup', function () {
+			  if ($('#password').val() == $('#confirm_password').val()) {
+			    $('#message').html('Matching').css('color', 'green');
+			  } else 
+			    $('#message').html('Not Matching').css('color', 'red');
+			});
+	</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+				
+				<script >
+          function check(oForm)
+            {  
+            var x= oForm.city.value;
+            var y= oForm.category.value;
+            var a= oForm.lat.value;
+            var b= oForm.lan.value;
+            
+            var queryString1 = "?city=" + x + "&category=" + y + "&lat=" + a + "&lan=" + b ;
+            var queryString2 =  "?category=" + y;
+            if(y == "")
+            	{
+            	alert('Please select Service for search');
+            	/* window.location.href= "main.jsp"; */
+            	}
+            	
+            else{
+            	
+                if (x == "")
+                {
+                	 
+                	 window.location.href = "searchmenu.jsp" + queryString2;
+					 
+				  }
+                else
+                {
+                	window.location= "searchInMain.jsp" +  queryString1;
+                	 
+                }
+            }
+             }
+        </script> 
+              <script>
+    (function() {
+      var options = {
+        elem: document.getElementsByClassName('grid-column-carousel')[0],
+        gridColClasses: 'col-xs-12 col-sm-6 col-md-4 col-lg-4',
+        autoplay: true
+      };
+       
+      var gCCarousel = new GCCarousel(options);
+      
+      /* Demonstrate the different methods that can be called on the GCCarousel object */
+      document.querySelector('button.first').addEventListener('click', function() {
+        gCCarousel.slide('first');
+      });
+      document.querySelector('button.prev').addEventListener('click', function() {
+        gCCarousel.slide('prev');
+      });
+      document.querySelector('button.next').addEventListener('click', function() {
+        gCCarousel.slide('next');
+      });
+      document.querySelector('button.last').addEventListener('click', function() {
+        gCCarousel.slide('last');
+      });
+      document.querySelector('button.to-page').addEventListener('click', function() {
+        var pageIndex = parseInt(document.querySelector('.to-page-input').value);
+        gCCarousel.slide(pageIndex);
+      });
+    }());
+  </script>  
+  
+</html>
